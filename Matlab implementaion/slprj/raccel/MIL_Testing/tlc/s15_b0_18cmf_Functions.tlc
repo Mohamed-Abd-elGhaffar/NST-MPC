@@ -1,0 +1,1138 @@
+%implements s15_b0_18cmf_Functions "C"
+
+%function iybmfry0hi_Fcn0(block) void
+%assign fcnBuff = ""
+%openfile fcnBuff
+%assign cfgTxt = ""
+%openfile cfgTxt
+int32_T b_k;
+int8_T f;
+boolean_T exitg1;
+f = 0;
+b_k = 0;
+exitg1 = false;
+while ((!exitg1) && (b_k < 20)) {
+    if (rtDW.mznmhfvmea[b_k] == NULL) {
+        f = (int8_T)(b_k + 1);
+        exitg1 = true;
+    } else {
+        b_k++;
+    }
+}
+return f;
+%closefile cfgTxt
+%<cfgTxt>
+%closefile fcnBuff
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static int8_T iybmfry0hi(\
+%assign comma = ""
+%if SLibCG_ArgAccessed(0, 0, 0)
+%<comma>int32_T tid\
+%assign comma = ", "
+%endif
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 0, fcnProtoType)>
+%return fcnBuff
+%endfunction
+
+%function ipo2uuqiqo_Fcn1(block) void
+%assign fcnBuff = ""
+%openfile fcnBuff
+%assign cfgTxt = ""
+%openfile cfgTxt
+FILE *filestar;
+int32_T tmp;
+int8_T fileid;
+int8_T j;
+%assign _modelSS = ""
+
+%if SLibCG_FcnCallArgAccessed(0,1,0,0)
+%<SLibCG_AccessArg(0 ,1, 2)>
+%endif
+
+fileid = -1;
+j = %<(SLibCGCallSubFcn("iybmfry0hi", ["tid"], 0, 1, 0))>;
+if (j >= 1) {
+    filestar = fopen(cfilename, cpermission);
+    if (filestar != NULL) {
+        rtDW.mznmhfvmea[j - 1] = filestar;
+        rtDW.lvyyr1smre[j - 1] = true;
+        tmp = j + 2;
+        if (j + 2 > 127) {
+            tmp = 127;
+        }
+        fileid = (int8_T)tmp;
+    }
+}
+return fileid;
+%closefile cfgTxt
+%<cfgTxt>
+%closefile fcnBuff
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static int8_T ipo2uuqiqo(\
+%assign comma = ""
+%<comma>const char_T *cfilename\
+%assign comma = ", "
+%<comma>const char_T *cpermission\
+%assign comma = ", "
+%if SLibCG_ArgAccessed(0, 1, 2)
+%<comma>int32_T tid\
+%assign comma = ", "
+%endif
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 1, fcnProtoType)>
+%return fcnBuff
+%endfunction
+
+%function mc0ceyzo3c_Fcn2(block) void
+%assign fcnBuff = ""
+%openfile fcnBuff
+%assign cfgTxt = ""
+%openfile cfgTxt
+jmwbldc2a4 *emxArray;
+int32_T i;
+*pEmxArray = (jmwbldc2a4 *)malloc(sizeof(jmwbldc2a4));
+emxArray = *pEmxArray;
+emxArray->data = (char_T *)NULL;
+emxArray->numDimensions = numDimensions;
+emxArray->size = (int32_T *)malloc(sizeof(int32_T) * (uint32_T)numDimensions);
+emxArray->allocatedSize = 0;
+emxArray->canFreeData = true;
+for (i = 0; i < numDimensions; i++) {
+    emxArray->size[i] = 0;
+}
+%closefile cfgTxt
+%<cfgTxt>
+%closefile fcnBuff
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void mc0ceyzo3c(\
+%assign comma = ""
+%<comma>jmwbldc2a4 **pEmxArray\
+%assign comma = ", "
+%<comma>int32_T numDimensions\
+%assign comma = ", "
+%if SLibCG_ArgAccessed(0, 2, 2)
+%<comma>int32_T tid\
+%assign comma = ", "
+%endif
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 2, fcnProtoType)>
+%return fcnBuff
+%endfunction
+
+%function k10asyic4k_Fcn3(block) void
+%assign fcnBuff = ""
+%openfile fcnBuff
+%assign cfgTxt = ""
+%openfile cfgTxt
+FILE *f;
+int8_T fileid;
+fileid = (int8_T)varargin_1;
+if (varargin_1 != (int8_T)varargin_1) {
+    fileid = -1;
+}
+if (fileid >= 3) {
+    f = rtDW.mznmhfvmea[fileid - 3];
+} else if (fileid == 0) {
+    f = stdin;
+} else if (fileid == 1) {
+    f = stdout;
+} else if (fileid == 2) {
+    f = stderr;
+} else {
+    f = NULL;
+}
+return f;
+%closefile cfgTxt
+%<cfgTxt>
+%closefile fcnBuff
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static FILE *k10asyic4k(\
+%assign comma = ""
+%<comma>real_T varargin_1\
+%assign comma = ", "
+%if SLibCG_ArgAccessed(0, 3, 1)
+%<comma>int32_T tid\
+%assign comma = ", "
+%endif
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 3, fcnProtoType)>
+%return fcnBuff
+%endfunction
+
+%function oqdcoeasi4_Fcn4(block) void
+%assign fcnBuff = ""
+%openfile fcnBuff
+%assign cfgTxt = ""
+%openfile cfgTxt
+FILE *b_f;
+int32_T cst;
+int32_T st;
+int8_T fileid;
+int8_T fileid_p;
+st = -1;
+fileid = (int8_T)fid;
+if (fid != (int8_T)fid) {
+    fileid = -1;
+}
+fileid_p = fileid;
+if (fileid < 0) {
+    fileid_p = -1;
+}
+if (fileid_p >= 3) {
+    b_f = rtDW.mznmhfvmea[fileid_p - 3];
+} else if (fileid_p == 0) {
+    b_f = stdin;
+} else if (fileid_p == 1) {
+    b_f = stdout;
+} else if (fileid_p == 2) {
+    b_f = stderr;
+} else {
+    b_f = NULL;
+}
+if ((b_f != NULL) && (fileid >= 3)) {
+    cst = fclose(b_f);
+    if (cst == 0) {
+        st = 0;
+        rtDW.mznmhfvmea[fileid - 3] = NULL;
+        rtDW.lvyyr1smre[fileid - 3] = true;
+    }
+}
+return st;
+%closefile cfgTxt
+%<cfgTxt>
+%closefile fcnBuff
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static int32_T oqdcoeasi4(\
+%assign comma = ""
+%<comma>real_T fid\
+%assign comma = ", "
+%if SLibCG_ArgAccessed(0, 4, 1)
+%<comma>int32_T tid\
+%assign comma = ", "
+%endif
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 4, fcnProtoType)>
+%return fcnBuff
+%endfunction
+
+%function jkwmypat41_Fcn5(block) void
+%assign fcnBuff = ""
+%openfile fcnBuff
+%assign cfgTxt = ""
+%openfile cfgTxt
+if (*pEmxArray != (jmwbldc2a4 *)NULL) {
+    if (((*pEmxArray)->data != (char_T *)NULL) && (*pEmxArray)->canFreeData) {
+        free((*pEmxArray)->data);
+    }
+    free((*pEmxArray)->size);
+    free(*pEmxArray);
+    *pEmxArray = (jmwbldc2a4 *)NULL;
+}
+%closefile cfgTxt
+%<cfgTxt>
+%closefile fcnBuff
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void jkwmypat41(\
+%assign comma = ""
+%<comma>jmwbldc2a4 **pEmxArray\
+%assign comma = ", "
+%if SLibCG_ArgAccessed(0, 5, 1)
+%<comma>int32_T tid\
+%assign comma = ", "
+%endif
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 5, fcnProtoType)>
+%return fcnBuff
+%endfunction
+
+%function bowq4rywy4_Fcn6(block) void
+%assign fcnBuff = ""
+%openfile fcnBuff
+%assign cfgTxt = ""
+%openfile cfgTxt
+int32_T i;
+int32_T newNumel;
+void *newData;
+if (oldNumel < 0) {
+    oldNumel = 0;
+}
+newNumel = 1;
+for (i = 0; i < emxArray->numDimensions; i++) {
+    newNumel *= emxArray->size[i];
+}
+if (newNumel > emxArray->allocatedSize) {
+    i = emxArray->allocatedSize;
+    if (i < 16) {
+        i = 16;
+    }
+    while (i < newNumel) {
+        if (i > 1073741823) {
+            i = MAX_int32_T;
+        } else {
+            i <<= 1;
+        }
+    }
+    newData = malloc((uint32_T)i * sizeof(char_T));
+    if (emxArray->data != NULL) {
+        memcpy(newData, emxArray->data, sizeof(char_T) * (uint32_T)oldNumel);
+        if (emxArray->canFreeData) {
+            free(emxArray->data);
+        }
+    }
+    emxArray->data = (char_T *)newData;
+    emxArray->allocatedSize = i;
+    emxArray->canFreeData = true;
+}
+%closefile cfgTxt
+%<cfgTxt>
+%closefile fcnBuff
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void bowq4rywy4(\
+%assign comma = ""
+%<comma>jmwbldc2a4 *emxArray\
+%assign comma = ", "
+%<comma>int32_T oldNumel\
+%assign comma = ", "
+%if SLibCG_ArgAccessed(0, 6, 2)
+%<comma>int32_T tid\
+%assign comma = ", "
+%endif
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 6, fcnProtoType)>
+%return fcnBuff
+%endfunction
+
+%function exuzcsgneh_Fcn7(block) void
+%assign fcnBuff = ""
+%openfile fcnBuff
+%assign cfgTxt = ""
+%openfile cfgTxt
+FILE *filestar;
+FILE *filestar_p;
+char *cOut;
+int b_st;
+jmwbldc2a4 *outBuff;
+int32_T c_i;
+int32_T carriageReturnAt;
+int32_T exitg1;
+int32_T exitg3;
+int32_T i;
+int32_T i_p;
+int32_T idx;
+int32_T reachedEndOfFile;
+char_T ReadBuff[1024];
+uint8_T buf;
+boolean_T exitg2;
+boolean_T fileEndAfterCarriageReturn;
+boolean_T newLineAfterCarriageReturn;
+boolean_T readNewline;
+%assign _modelSS = ""
+
+%if SLibCG_FcnCallArgAccessed(0,7,14,1)
+%<SLibCG_AccessArg(0 ,7, 2)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(0,7,13,2)
+%<SLibCG_AccessArg(0 ,7, 2)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(0,7,12,2)
+%<SLibCG_AccessArg(0 ,7, 2)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(0,7,11,2)
+%<SLibCG_AccessArg(0 ,7, 2)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(0,7,10,0)
+%<SLibCG_AccessArg(0 ,7, 1)>
+%endif
+%if SLibCG_FcnCallArgAccessed(0,7,10,2)
+%<SLibCG_AccessArg(0 ,7, 2)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(0,7,9,0)
+%<SLibCG_AccessArg(0 ,7, 1)>
+%endif
+%if SLibCG_FcnCallArgAccessed(0,7,9,2)
+%<SLibCG_AccessArg(0 ,7, 2)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(0,7,8,0)
+%<SLibCG_AccessArg(0 ,7, 1)>
+%endif
+%if SLibCG_FcnCallArgAccessed(0,7,8,2)
+%<SLibCG_AccessArg(0 ,7, 2)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(0,7,7,0)
+%<SLibCG_AccessArg(0 ,7, 1)>
+%endif
+%if SLibCG_FcnCallArgAccessed(0,7,7,2)
+%<SLibCG_AccessArg(0 ,7, 2)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(0,7,6,0)
+%<SLibCG_AccessArg(0 ,7, 0)>
+%endif
+%if SLibCG_FcnCallArgAccessed(0,7,6,1)
+%<SLibCG_AccessArg(0 ,7, 2)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(0,7,5,0)
+%<SLibCG_AccessArg(0 ,7, 0)>
+%endif
+%if SLibCG_FcnCallArgAccessed(0,7,5,1)
+%<SLibCG_AccessArg(0 ,7, 2)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(0,7,4,0)
+%<SLibCG_AccessArg(0 ,7, 0)>
+%endif
+%if SLibCG_FcnCallArgAccessed(0,7,4,1)
+%<SLibCG_AccessArg(0 ,7, 2)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(0,7,3,0)
+%<SLibCG_AccessArg(0 ,7, 0)>
+%endif
+%if SLibCG_FcnCallArgAccessed(0,7,3,1)
+%<SLibCG_AccessArg(0 ,7, 2)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(0,7,2,0)
+%<SLibCG_AccessArg(0 ,7, 0)>
+%endif
+%if SLibCG_FcnCallArgAccessed(0,7,2,1)
+%<SLibCG_AccessArg(0 ,7, 2)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(0,7,1,0)
+%<SLibCG_AccessArg(0 ,7, 0)>
+%endif
+%if SLibCG_FcnCallArgAccessed(0,7,1,1)
+%<SLibCG_AccessArg(0 ,7, 2)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(0,7,0,0)
+%<SLibCG_AccessArg(0 ,7, 0)>
+%endif
+%if SLibCG_FcnCallArgAccessed(0,7,0,1)
+%<SLibCG_AccessArg(0 ,7, 2)>
+%endif
+
+filestar = %<(SLibCGCallSubFcn("k10asyic4k", ["fileID", "tid"], 0, 7, 0))>;
+if ((!(fileID != 0.0)) || (!(fileID != 1.0)) || (!(fileID != 2.0))) {
+    filestar = NULL;
+}
+%<(SLibCGCallSubFcn("mc0ceyzo3c", ["&outBuff", "2", "tid"], 0, 7, 13))>;
+outBuff->size[0] = 1;
+outBuff->size[1] = 0;
+if (!(filestar == NULL)) {
+    do {
+        exitg1 = 0;
+        cOut = fgets(&ReadBuff[0], 1024, filestar);
+        readNewline = false;
+        filestar_p = %<(SLibCGCallSubFcn("k10asyic4k", ["fileID", "tid"], 0, 7, 1))>;
+        if (filestar_p == NULL) {
+            reachedEndOfFile = 0;
+        } else {
+            b_st = feof(filestar_p);
+            reachedEndOfFile = ((int32_T)b_st != 0);
+        }
+        if (cOut == NULL) {
+            exitg1 = 1;
+        } else {
+            idx = 1;
+            carriageReturnAt = 0;
+            if (reachedEndOfFile != 0) {
+                c_i = 1;
+                exitg2 = false;
+                while ((!exitg2) && (c_i - 1 < 1024)) {
+                    if (ReadBuff[c_i - 1] == '\x00') {
+                        idx = c_i;
+                        exitg2 = true;
+                    } else {
+                        if ((carriageReturnAt == 0) && (ReadBuff[c_i - 1] == '\r')) {
+                            carriageReturnAt = c_i;
+                        }
+                        c_i++;
+                    }
+                }
+                if (ReadBuff[idx - 1] == '\x00') {
+                    idx--;
+                }
+            } else {
+                c_i = 1;
+                do {
+                    exitg3 = 0;
+                    if (c_i > 1024) {
+                        idx = 1023;
+                        exitg3 = 1;
+                    } else if (ReadBuff[c_i - 1] == '\n') {
+                        idx = c_i;
+                        exitg3 = 1;
+                    } else {
+                        if ((carriageReturnAt == 0) && (ReadBuff[c_i - 1] == '\r')) {
+                            carriageReturnAt = c_i;
+                        }
+                        c_i++;
+                    }
+                } while (exitg3 == 0);
+                readNewline = (ReadBuff[idx - 1] == '\n');
+            }
+            if ((carriageReturnAt > 0) && (carriageReturnAt < 1024)) {
+                newLineAfterCarriageReturn = (ReadBuff[carriageReturnAt] == '\n');
+                if ((reachedEndOfFile != 0) && (ReadBuff[carriageReturnAt] == '\x00')) {
+                    fileEndAfterCarriageReturn = true;
+                } else {
+                    fileEndAfterCarriageReturn = false;
+                }
+            } else {
+                newLineAfterCarriageReturn = false;
+                fileEndAfterCarriageReturn = false;
+            }
+            if ((carriageReturnAt == 0) || newLineAfterCarriageReturn || fileEndAfterCarriageReturn) {
+                if (idx < 1) {
+                    i = 0;
+                } else {
+                    i = idx;
+                }
+                c_i = outBuff->size[1];
+                i_p = outBuff->size[0] * outBuff->size[1];
+                outBuff->size[1] += i;
+                %<(SLibCGCallSubFcn("bowq4rywy4", ["outBuff", "i_p", "tid"], 0, 7, 12))>;
+                for (i_p = 0; i_p < i; i_p++) {
+                    outBuff->data[c_i + i_p] = ReadBuff[i_p];
+                }
+            } else {
+                i = outBuff->size[1];
+                i_p = outBuff->size[0] * outBuff->size[1];
+                outBuff->size[1] += carriageReturnAt;
+                %<(SLibCGCallSubFcn("bowq4rywy4", ["outBuff", "i_p", "tid"], 0, 7, 11))>;
+                for (i_p = 0; i_p < carriageReturnAt; i_p++) {
+                    outBuff->data[i + i_p] = ReadBuff[i_p];
+                }
+                filestar_p = %<(SLibCGCallSubFcn("k10asyic4k", ["fileID", "tid"], 0, 7, 2))>;
+                if ((!(fileID != 0.0)) || (!(fileID != 1.0)) || (!(fileID != 2.0))) {
+                    filestar_p = NULL;
+                }
+                if (!(filestar_p == NULL)) {
+                    fseek(filestar_p, (long int)(carriageReturnAt - idx), SEEK_CUR);
+                }
+            }
+            if (readNewline || (reachedEndOfFile != 0) || (carriageReturnAt > 0)) {
+                exitg1 = 1;
+            }
+        }
+    } while (exitg1 == 0);
+    filestar = %<(SLibCGCallSubFcn("k10asyic4k", ["fileID", "tid"], 0, 7, 3))>;
+    if (filestar == NULL) {
+        reachedEndOfFile = 0;
+    } else {
+        b_st = feof(filestar);
+        reachedEndOfFile = ((int32_T)b_st != 0);
+    }
+    if (reachedEndOfFile == 0) {
+        filestar = %<(SLibCGCallSubFcn("k10asyic4k", ["fileID", "tid"], 0, 7, 4))>;
+        if ((!(fileID != 0.0)) || (!(fileID != 1.0)) || (!(fileID != 2.0))) {
+            filestar = NULL;
+        }
+        if (!(filestar == NULL)) {
+            fread(&buf, sizeof(uint8_T), (size_t)1, filestar);
+        }
+        filestar = %<(SLibCGCallSubFcn("k10asyic4k", ["fileID", "tid"], 0, 7, 5))>;
+        if (!(filestar == NULL)) {
+            b_st = feof(filestar);
+            reachedEndOfFile = ((int32_T)b_st != 0);
+        }
+        if (reachedEndOfFile == 0) {
+            filestar = %<(SLibCGCallSubFcn("k10asyic4k", ["fileID", "tid"], 0, 7, 6))>;
+            if ((!(fileID != 0.0)) || (!(fileID != 1.0)) || (!(fileID != 2.0))) {
+                filestar = NULL;
+            }
+            if (!(filestar == NULL)) {
+                fseek(filestar, (long int)-1.0, SEEK_CUR);
+            }
+        }
+    }
+}
+if (outBuff->size[1] == 0) {
+    out->size[0] = 1;
+    out->size[1] = 0;
+} else if (outBuff->data[outBuff->size[1] - 1] == '\n') {
+    if ((outBuff->size[1] != 1) && (outBuff->data[outBuff->size[1] - 2] == '\r')) {
+        if (outBuff->size[1] - 2 < 1) {
+            reachedEndOfFile = 0;
+        } else {
+            reachedEndOfFile = outBuff->size[1] - 2;
+        }
+        i_p = out->size[0] * out->size[1];
+        out->size[0] = 1;
+        out->size[1] = reachedEndOfFile;
+        %<(SLibCGCallSubFcn("bowq4rywy4", ["out", "i_p", "tid"], 0, 7, 10))>;
+        if (reachedEndOfFile - 1 >= 0) {
+            memcpy(&out->data[0], &outBuff->data[0], (uint32_T)reachedEndOfFile * sizeof(char_T));
+        }
+    } else {
+        if (outBuff->size[1] - 1 < 1) {
+            reachedEndOfFile = 0;
+        } else {
+            reachedEndOfFile = outBuff->size[1] - 1;
+        }
+        i_p = out->size[0] * out->size[1];
+        out->size[0] = 1;
+        out->size[1] = reachedEndOfFile;
+        %<(SLibCGCallSubFcn("bowq4rywy4", ["out", "i_p", "tid"], 0, 7, 9))>;
+        if (reachedEndOfFile - 1 >= 0) {
+            memcpy(&out->data[0], &outBuff->data[0], (uint32_T)reachedEndOfFile * sizeof(char_T));
+        }
+    }
+} else if (outBuff->data[outBuff->size[1] - 1] == '\r') {
+    if (outBuff->size[1] - 1 < 1) {
+        reachedEndOfFile = 0;
+    } else {
+        reachedEndOfFile = outBuff->size[1] - 1;
+    }
+    i_p = out->size[0] * out->size[1];
+    out->size[0] = 1;
+    out->size[1] = reachedEndOfFile;
+    %<(SLibCGCallSubFcn("bowq4rywy4", ["out", "i_p", "tid"], 0, 7, 8))>;
+    if (reachedEndOfFile - 1 >= 0) {
+        memcpy(&out->data[0], &outBuff->data[0], (uint32_T)reachedEndOfFile * sizeof(char_T));
+    }
+} else {
+    i_p = out->size[0] * out->size[1];
+    out->size[0] = 1;
+    out->size[1] = outBuff->size[1];
+    %<(SLibCGCallSubFcn("bowq4rywy4", ["out", "i_p", "tid"], 0, 7, 7))>;
+    reachedEndOfFile = outBuff->size[1];
+    memcpy(&out->data[0], &outBuff->data[0], (uint32_T)reachedEndOfFile * sizeof(char_T));
+}
+%<(SLibCGCallSubFcn("jkwmypat41", ["&outBuff", "tid"], 0, 7, 14))>;
+%closefile cfgTxt
+%<cfgTxt>
+%closefile fcnBuff
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void exuzcsgneh(\
+%assign comma = ""
+%<comma>real_T fileID\
+%assign comma = ", "
+%<comma>jmwbldc2a4 *out\
+%assign comma = ", "
+%if SLibCG_ArgAccessed(0, 7, 2)
+%<comma>int32_T tid\
+%assign comma = ", "
+%endif
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 7, fcnProtoType)>
+%return fcnBuff
+%endfunction
+
+%function lyo1ts0zb3_Fcn8(block) void
+%assign fcnBuff = ""
+%openfile fcnBuff
+%assign cfgTxt = ""
+%openfile cfgTxt
+FILE *filestar;
+int b_st;
+jmwbldc2a4 *b_line;
+jmwbldc2a4 *inStr;
+jmwbldc2a4 *lastLine;
+real_T b_A_data[132];
+real_T bigA[132];
+real_T b;
+int32_T i;
+int32_T loop_ub;
+int32_T numWrittenTotal;
+int32_T sumptrLoc;
+char_T cfmt[5];
+int8_T fileid;
+boolean_T incompleteRead;
+boolean_T ranOut;
+static const char_T cfmt_p[5] = %<(TLC_STR_CTX(0))>;
+real_T *b_A;
+real_T *b_A_p;
+int32_T exitg1;
+boolean_T exitg2;
+%assign _modelSS = ""
+
+%if SLibCG_FcnCallArgAccessed(0,8,13,1)
+%<SLibCG_AccessArg(0 ,8, 1)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(0,8,12,1)
+%<SLibCG_AccessArg(0 ,8, 1)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(0,8,11,1)
+%<SLibCG_AccessArg(0 ,8, 1)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(0,8,10,2)
+%<SLibCG_AccessArg(0 ,8, 1)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(0,8,9,2)
+%<SLibCG_AccessArg(0 ,8, 1)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(0,8,8,2)
+%<SLibCG_AccessArg(0 ,8, 1)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(0,8,7,2)
+%<SLibCG_AccessArg(0 ,8, 1)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(0,8,6,2)
+%<SLibCG_AccessArg(0 ,8, 1)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(0,8,5,2)
+%<SLibCG_AccessArg(0 ,8, 1)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(0,8,4,2)
+%<SLibCG_AccessArg(0 ,8, 1)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(0,8,3,1)
+%<SLibCG_AccessArg(0 ,8, 1)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(0,8,2,2)
+%<SLibCG_AccessArg(0 ,8, 1)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(0,8,1,1)
+%<SLibCG_AccessArg(0 ,8, 1)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(0,8,0,2)
+%<SLibCG_AccessArg(0 ,8, 1)>
+%endif
+
+/*  Use coder.target to distinguish between simulation and generated code if needed */
+/*  But standard fopen/fclose works in many C++ targets. */
+fileid = %<(SLibCGCallSubFcn("ipo2uuqiqo", ["\"sim_data.csv\"", "\"rb\"", "tid"], 0, 8, 0))>;
+if (fileid != -1) {
+    printf("%<TLC_STR_CTX(1)>", "sim_data.csv");
+    fflush(stdout);
+    %<(SLibCGCallSubFcn("mc0ceyzo3c", ["&lastLine", "2", "tid"], 0, 8, 8))>;
+    lastLine->size[0] = 1;
+    lastLine->size[1] = 0;
+    /*  Read through the file to find the last line */
+    %<(SLibCGCallSubFcn("mc0ceyzo3c", ["&b_line", "2", "tid"], 0, 8, 9))>;
+    do {
+        exitg1 = 0;
+        filestar = %<(SLibCGCallSubFcn("k10asyic4k", ["(real_T)fileid", "tid"], 0, 8, 1))>;
+        if (filestar == NULL) {
+            b = 0.0;
+        } else {
+            b_st = feof(filestar);
+            b = ((int32_T)b_st != 0);
+        }
+        if (!(b != 0.0)) {
+            %<(SLibCGCallSubFcn("exuzcsgneh", ["(real_T)fileid", "b_line", "tid"], 0, 8, 2))>;
+            if (b_line->size[1] != 0) {
+                i = lastLine->size[0] * lastLine->size[1];
+                lastLine->size[0] = 1;
+                lastLine->size[1] = b_line->size[1];
+                %<(SLibCGCallSubFcn("bowq4rywy4", ["lastLine", "i", "tid"], 0, 8, 4))>;
+                loop_ub = b_line->size[1];
+                memcpy(&lastLine->data[0], &b_line->data[0], (uint32_T)loop_ub * sizeof(char_T));
+            }
+        } else {
+            exitg1 = 1;
+        }
+    } while (exitg1 == 0);
+    %<(SLibCGCallSubFcn("oqdcoeasi4", ["(real_T)fileid", "tid"], 0, 8, 3))>;
+    if (lastLine->size[1] != 0) {
+        /*  Parse the CSV string.  */
+        /*  Total columns: 7 (Gate) + 9 (Agg) + 49 (Pg) + 81 (Pa) = 146 */
+        %<(SLibCGCallSubFcn("mc0ceyzo3c", ["&inStr", "2", "tid"], 0, 8, 10))>;
+        i = inStr->size[0] * inStr->size[1];
+        inStr->size[0] = 1;
+        inStr->size[1] = lastLine->size[1] + 1;
+        %<(SLibCGCallSubFcn("bowq4rywy4", ["inStr", "i", "tid"], 0, 8, 5))>;
+        loop_ub = lastLine->size[1];
+        memcpy(&inStr->data[0], &lastLine->data[0], (uint32_T)loop_ub * sizeof(char_T));
+        inStr->data[lastLine->size[1]] = '\x00';
+        b = 0.0;
+        memset(&bigA[0], 0, 132U * sizeof(real_T));
+        i = 1;
+        numWrittenTotal = 0;
+        ranOut = true;
+        sumptrLoc = 0;
+        exitg2 = false;
+        while ((!exitg2) && ((i > 0) && (!(sumptrLoc >= inStr->size[1])))) {
+            i = b_line->size[0] * b_line->size[1];
+            b_line->size[0] = 1;
+            b_line->size[1] = inStr->size[1];
+            %<(SLibCGCallSubFcn("bowq4rywy4", ["b_line", "i", "tid"], 0, 8, 6))>;
+            loop_ub = inStr->size[1];
+            if (loop_ub - 1 >= 0) {
+                memcpy(&b_line->data[0], &inStr->data[0], (uint32_T)loop_ub * sizeof(char_T));
+            }
+            b = 0.0;
+            loop_ub = -1;
+            i = sscanf(&b_line->data[sumptrLoc], "%<TLC_STR_CTX(2)>", &b, &loop_ub);
+            if (loop_ub != -1) {
+                i++;
+            }
+            incompleteRead = (i == 0);
+            if (i > 0) {
+                bigA[numWrittenTotal] = b;
+                numWrittenTotal++;
+                if (i >= 2) {
+                    sumptrLoc += loop_ub;
+                } else {
+                    incompleteRead = true;
+                }
+            }
+            if (incompleteRead) {
+                exitg2 = true;
+            } else if (132 - numWrittenTotal <= 1) {
+                ranOut = false;
+                exitg2 = true;
+            }
+        }
+        if ((numWrittenTotal < 132) && (!ranOut)) {
+            i = b_line->size[0] * b_line->size[1];
+            b_line->size[0] = 1;
+            b_line->size[1] = inStr->size[1];
+            %<(SLibCGCallSubFcn("bowq4rywy4", ["b_line", "i", "tid"], 0, 8, 7))>;
+            loop_ub = inStr->size[1];
+            if (loop_ub - 1 >= 0) {
+                memcpy(&b_line->data[0], &inStr->data[0], (uint32_T)loop_ub * sizeof(char_T));
+            }
+            loop_ub = -1;
+            for (i = 0; i < 5; i++) {
+                cfmt[i] = cfmt_p[i];
+            }
+            i = sscanf(&b_line->data[sumptrLoc], &cfmt[0], &b, &loop_ub);
+            if (loop_ub != -1) {
+                i++;
+            }
+            if (i >= 1) {
+                bigA[numWrittenTotal] = b;
+                numWrittenTotal++;
+            }
+        }
+        %<(SLibCGCallSubFcn("jkwmypat41", ["&inStr", "tid"], 0, 8, 13))>;
+        if (numWrittenTotal > 0) {
+            if (numWrittenTotal > 1) {
+                if (numWrittenTotal > 132) {
+                    numWrittenTotal = 132;
+                }
+                memcpy(&b_A_data[0], &bigA[0], (uint32_T)numWrittenTotal * sizeof(real_T));
+            } else {
+                numWrittenTotal = 1;
+                b_A_data[0] = bigA[0];
+            }
+            i = numWrittenTotal;
+        } else {
+            i = 0;
+        }
+        if (i >= 132) {
+            /*  The new CSV doesn't have Time/Omega/Load, so it starts at index 1 */
+            for (i = 0; i < 6; i++) {
+                obj->GateData[i] = b_A_data[i];
+            }
+            for (i = 0; i < 5; i++) {
+                obj->AggData[i + 4] = b_A_data[i + 10];
+            }
+            /*  Extract the flattened matrices (49 and 81 elements) */
+            /*  We reshape and then transpose (.') to convert C++ row-major  */
+            /*  memory layout back into a correct MATLAB matrix. */
+            b_A = &b_A_data[15];
+            i = 0;
+            for (numWrittenTotal = 0; numWrittenTotal < 6; numWrittenTotal++) {
+                loop_ub = 0;
+                for (sumptrLoc = 0; sumptrLoc < 6; sumptrLoc++) {
+                    obj->PgData[sumptrLoc + i] = b_A[loop_ub + numWrittenTotal];
+                    loop_ub += 6;
+                }
+                i += 6;
+            }
+            b_A_p = &b_A_data[51];
+            i = 0;
+            for (numWrittenTotal = 0; numWrittenTotal < 9; numWrittenTotal++) {
+                loop_ub = 0;
+                for (sumptrLoc = 0; sumptrLoc < 9; sumptrLoc++) {
+                    obj->PaData[sumptrLoc + i] = b_A_p[loop_ub + numWrittenTotal];
+                    loop_ub += 9;
+                }
+                i += 9;
+            }
+            /*  fprintf("Dynamics state: %<"\%d \\n\",obj.GateData)"> */
+            /*  fprintf("Aggregate state : %<"\%d \\n\",obj.AggData)"> */
+            printf("%<TLC_STR_CTX(3)>");
+            fflush(stdout);
+        } else {
+            printf("%<TLC_STR_CTX(4)>");
+            fflush(stdout);
+        }
+    } else {
+        printf("%<TLC_STR_CTX(5)>");
+        fflush(stdout);
+    }
+    %<(SLibCGCallSubFcn("jkwmypat41", ["&b_line", "tid"], 0, 8, 12))>;
+    %<(SLibCGCallSubFcn("jkwmypat41", ["&lastLine", "tid"], 0, 8, 11))>;
+} else {
+    printf("%<TLC_STR_CTX(6)>");
+    fflush(stdout);
+}
+%closefile cfgTxt
+%<cfgTxt>
+%closefile fcnBuff
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void lyo1ts0zb3(\
+%assign comma = ""
+%<comma>icoaoz3rgd *obj\
+%assign comma = ", "
+%if SLibCG_ArgAccessed(0, 8, 1)
+%<comma>int32_T tid\
+%assign comma = ", "
+%endif
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 8, fcnProtoType)>
+%return fcnBuff
+%endfunction
+
+%function aelvll5v1w_Fcn9(block) void
+%assign fcnBuff = ""
+%openfile fcnBuff
+%assign cfgTxt = ""
+%openfile cfgTxt
+real_T x_flow[9];
+real_T x_gate[7];
+real_T delM;
+int32_T i;
+x_flow[0] = agg_params[0] / 0.03 * 0.09 * 0.60343355824150346 * 0.0051961524227066317;
+x_flow[1] = 0.0;
+x_flow[2] = 0.0;
+x_flow[3] = 0.0;
+for (i = 0; i < 5; i++) {
+    x_flow[i + 4] = agg_params[i];
+}
+x_gate[0] = 0.8179;
+x_gate[1] = 0.0;
+x_gate[2] = 911812.5;
+x_gate[3] = 101312.5;
+x_gate[4] = 911812.5;
+x_gate[5] = gate_params[0];
+x_gate[6] = gate_params[1];
+printf("x_flow = [");
+fflush(stdout);
+delM = simulate_batch(50000U, 0U, &x_gate[0], &x_flow[0]);
+for (i = 0; i < 9; i++) {
+    printf("%<TLC_STR_CTX(7)>", x_flow[i]);
+    fflush(stdout);
+}
+printf("%<TLC_STR_CTX(8)>");
+fflush(stdout);
+printf("x_gate = [");
+fflush(stdout);
+for (i = 0; i < 7; i++) {
+    printf("%<TLC_STR_CTX(9)>", x_gate[i]);
+    fflush(stdout);
+}
+printf("%<TLC_STR_CTX(10)>");
+fflush(stdout);
+printf("%<TLC_STR_CTX(11)>", delM);
+fflush(stdout);
+return delM;
+%closefile cfgTxt
+%<cfgTxt>
+%closefile fcnBuff
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static real_T aelvll5v1w(\
+%assign comma = ""
+%<comma>const real_T gate_params[2]\
+%assign comma = ", "
+%<comma>const real_T agg_params[5]\
+%assign comma = ", "
+%if SLibCG_ArgAccessed(0, 9, 2)
+%<comma>int32_T tid\
+%assign comma = ", "
+%endif
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 9, fcnProtoType)>
+%return fcnBuff
+%endfunction
+
+%function kg2yq3xtp5_Fcn10(block) void
+%assign fcnBuff = ""
+%openfile fcnBuff
+%assign cfgTxt = ""
+%openfile cfgTxt
+real_T r;
+int32_T direction;
+if (p_up > p_down) {
+    r = p_down / p_up;
+    direction = 1;
+} else {
+    r = p_up / p_down;
+    direction = -1;
+    p_up = p_down;
+}
+r = muDoubleScalarMax(0.0, muDoubleScalarMin(r, 1.0));
+if (r > 0.528) {
+    r = (r - 0.528) / 0.472;
+    r = muDoubleScalarSqrt(1.0 - r * r);
+} else {
+    r = 1.0;
+}
+return 9.8000000000000017E-9 * C_valve * p_up * 1.225 * r * (real_T)direction;
+%closefile cfgTxt
+%<cfgTxt>
+%closefile fcnBuff
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static real_T kg2yq3xtp5(\
+%assign comma = ""
+%<comma>real_T p_up\
+%assign comma = ", "
+%<comma>real_T p_down\
+%assign comma = ", "
+%<comma>real_T C_valve\
+%assign comma = ", "
+%if SLibCG_ArgAccessed(0, 10, 3)
+%<comma>int32_T tid\
+%assign comma = ", "
+%endif
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 10, fcnProtoType)>
+%return fcnBuff
+%endfunction
+
+%function dclxlgkizc_Fcn11(block) void
+%assign fcnBuff = ""
+%openfile fcnBuff
+%assign cfgTxt = ""
+%openfile cfgTxt
+real_T C_val;
+real_T F_c;
+real_T F_static;
+real_T R;
+real_T R_underMin;
+real_T R_val;
+real_T V_ext;
+real_T V_ret;
+real_T alpha;
+real_T b_a;
+real_T c_a;
+real_T dC_dtheta;
+real_T d_a;
+real_T e_a;
+real_T f_a;
+real_T m_dot_ext;
+real_T m_dot_ret;
+real_T s;
+boolean_T ext;
+boolean_T ret;
+%assign _modelSS = ""
+
+%if SLibCG_FcnCallArgAccessed(0,11,3,1)
+%<SLibCG_AccessArg(0 ,11, 0)>
+%endif
+%if SLibCG_FcnCallArgAccessed(0,11,3,3)
+%<SLibCG_AccessArg(0 ,11, 4)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(0,11,2,0)
+%<SLibCG_AccessArg(0 ,11, 0)>
+%endif
+%if SLibCG_FcnCallArgAccessed(0,11,2,3)
+%<SLibCG_AccessArg(0 ,11, 4)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(0,11,1,0)
+%<SLibCG_AccessArg(0 ,11, 0)>
+%endif
+%if SLibCG_FcnCallArgAccessed(0,11,1,3)
+%<SLibCG_AccessArg(0 ,11, 4)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(0,11,0,1)
+%<SLibCG_AccessArg(0 ,11, 0)>
+%endif
+%if SLibCG_FcnCallArgAccessed(0,11,0,3)
+%<SLibCG_AccessArg(0 ,11, 4)>
+%endif
+
+s = muDoubleScalarSin(x[0] - 0.5191);
+alpha = muDoubleScalarAtan2(0.13996448246826462 - 0.223 * muDoubleScalarSin(x[0]), 0.223 * muDoubleScalarCos(x[0]) + 0.079971142591505173);
+C_val = (0.1612 * s - 0.223) * 0.223 / (0.075714440000000008 - 0.0718952 * s);
+dC_dtheta = 0.075714440000000008 - 0.0718952 * s;
+dC_dtheta = muDoubleScalarCos(x[0] - 0.5191) * -0.00085352399745600009 / (dC_dtheta * dC_dtheta);
+R_val = muDoubleScalarSin(x[0] + alpha) * -0.223;
+R = muDoubleScalarSqrt(0.075714440000000008 - 0.0718952 * s);
+s = R_val * x[1];
+b_a = 0.0785 * C_val * muDoubleScalarSin(alpha) + -0.223 * muDoubleScalarSin(x[0]);
+c_a = 0.0785 * C_val * muDoubleScalarCos(alpha) + 0.223 * muDoubleScalarCos(x[0]);
+d_a = 0.157 * C_val * muDoubleScalarSin(alpha) + -0.223 * muDoubleScalarSin(x[0]);
+e_a = 0.157 * C_val * muDoubleScalarCos(alpha) + 0.223 * muDoubleScalarCos(x[0]);
+V_ext = ((R - 0.2337) + 0.001) * 0.00020106192982974675 + 2.4127431579569608E-6;
+V_ret = (0.1 - ((R - 0.2337) + 0.001)) * 0.0001727875959474386 + 2.0734511513692632E-6;
+if (u == 0.0) {
+    m_dot_ext = %<(SLibCGCallSubFcn("kg2yq3xtp5", ["911925.0", "x[2]", "0.1056", "tid"], 0, 11, 3))>;
+    m_dot_ret = -%<(SLibCGCallSubFcn("kg2yq3xtp5", ["x[3]", "101325.0", "0.0591", "tid"], 0, 11, 2))>;
+} else if (u == 1.0) {
+    m_dot_ext = -%<(SLibCGCallSubFcn("kg2yq3xtp5", ["x[2]", "101325.0", "0.0729", "tid"], 0, 11, 1))>;
+    m_dot_ret = %<(SLibCGCallSubFcn("kg2yq3xtp5", ["911925.0", "x[3]", "0.1056", "tid"], 0, 11, 0))>;
+} else {
+    m_dot_ext = 0.0;
+    m_dot_ret = 0.0;
+}
+ret = (u == 1.0);
+ext = (u == 0.0);
+F_static = ((C_val * C_val * 1.4434 + 1.0) + (15.072 * (real_T)ret + 96.198638912657557 * (real_T)ext) * (R_val * R_val)) * ((real_T)ret * 1.482 + (real_T)ext * 2.028);
+F_c = 0.9178 * F_static;
+f_a = s / 0.005;
+R_underMin = muDoubleScalarMax(0.0, 0.2337 - R);
+R = muDoubleScalarMax(0.0, R - 0.33375);
+X_k_plus1[1] = ((((((x[2] - 101325.0) * 0.00020106192982974675 - (x[3] - 101325.0) * 0.0001727875959474386) * R_val - ((((((C_val * C_val * muDoubleScalarCos(alpha) + dC_dtheta * muDoubleScalarSin(alpha)) * 0.0785 + -0.223 * muDoubleScalarCos(x[0])) * ((0.0785 * C_val * muDoubleScalarSin(alpha) + -0.223 * muDoubleScalarSin(x[0])) * 2.0) + 0.0041081666666666662 * C_val * dC_dtheta) + ((C_val * C_val * -muDoubleScalarSin(alpha) + dC_dtheta * muDoubleScalarCos(alpha)) * 0.0785 + 0.223 * -muDoubleScalarSin(x[0])) * ((0.0785 * C_val * muDoubleScalarCos(alpha) + 0.223 * muDoubleScalarCos(x[0])) * 2.0)) * 0.02301 + 0.00228324 * C_val * dC_dtheta) + (((C_val * C_val * -muDoubleScalarSin(alpha) + dC_dtheta * muDoubleScalarCos(alpha)) * 0.157 + 0.223 * -muDoubleScalarSin(x[0])) * (0.157 * C_val * muDoubleScalarCos(alpha) + 0.223 * muDoubleScalarCos(x[0])) + ((C_val * C_val * muDoubleScalarCos(alpha) + dC_dtheta * muDoubleScalarSin(alpha)) * 0.157 + -0.223 * muDoubleScalarCos(x[0]))) * (0.157 * C_val * muDoubleScalarSin(alpha) + -0.223 * muDoubleScalarSin(x[0])) * 0.04258) * 0.5 * (x[1] * x[1])) - (((-muDoubleScalarSin(x[0] - 0.036765969138185) * 0.071 * -1.8851877000000001 + 0.0885 * C_val * -muDoubleScalarSin(alpha) * -0.938817) + (0.0785 * C_val * muDoubleScalarSin(alpha) + 0.223 * -muDoubleScalarSin(x[0])) * -0.22572810000000001) + (0.157 * C_val * muDoubleScalarSin(alpha) + 0.223 * -muDoubleScalarSin(x[0])) * -0.2088549)) - (((F_static - F_c) * muDoubleScalarExp(-(f_a * f_a)) + F_c) * muDoubleScalarTanh(150.0 * x[1]) + 0.0087 * s * R_val)) + ((-1.0764E+6 * R - 9040.7 * s) * (real_T)(R > 0.0) + (1.0764E+6 * R_underMin - 9661.7 * s) * (real_T)(R_underMin > 0.0)) * R_val) * (1.0 / (((((C_val * C_val * 0.0020540833333333331 + b_a * b_a) + c_a * c_a) * 0.02301 + (C_val * C_val * 0.00114162 + 0.001333991)) + (d_a * d_a + e_a * e_a) * 0.02129) + (15.7405 * (real_T)ext + 4.7308 * (real_T)ret) * (real_T)((R_underMin > 0.0) || (R > 0.0)) * (R_val * R_val)));
+X_k_plus1[2] = m_dot_ext * 287.0 * 1.2 * 294.0 / V_ext - 0.00020106192982974675 * s * x[2] * 1.2 / V_ext;
+X_k_plus1[3] = m_dot_ret * 287.0 * 1.2 * 294.0 / V_ret + 0.0001727875959474386 * s * x[3] * 1.2 / V_ret;
+X_k_plus1[0] = x[1] * Ts + x[0];
+X_k_plus1[1] = X_k_plus1[1] * Ts + x[1];
+X_k_plus1[2] = X_k_plus1[2] * Ts + x[2];
+X_k_plus1[3] = X_k_plus1[3] * Ts + x[3];
+%closefile cfgTxt
+%<cfgTxt>
+%closefile fcnBuff
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void dclxlgkizc(\
+%assign comma = ""
+%<comma>const real_T x[4]\
+%assign comma = ", "
+%<comma>real_T u\
+%assign comma = ", "
+%<comma>real_T Ts\
+%assign comma = ", "
+%<comma>real_T X_k_plus1[4]\
+%assign comma = ", "
+%if SLibCG_ArgAccessed(0, 11, 4)
+%<comma>int32_T tid\
+%assign comma = ", "
+%endif
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 11, fcnProtoType)>
+%return fcnBuff
+%endfunction
+

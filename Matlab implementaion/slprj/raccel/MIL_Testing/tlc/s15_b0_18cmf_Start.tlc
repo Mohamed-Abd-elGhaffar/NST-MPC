@@ -1,0 +1,109 @@
+%implements s15_b0_18cmf_Start "C"
+
+%function Start(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%openfile localVarDecl
+
+int32_T i;
+%closefile localVarDecl
+%assign _modelSS = ""
+
+%if SLibCG_FcnCallArgAccessed(0,12,0,1)
+%<SLibCG_AccessArg(0 ,12, 0)>
+%endif
+
+%assign tlcSetupRuntimeResourcesFcnOfS10B4 = OpaqueTLCBlockFcn("SetupRuntimeResources", 10, 4, 0, 12, 0)
+%assign tlcSetupRuntimeResourcesFcnOfS10B5 = OpaqueTLCBlockFcn("SetupRuntimeResources", 10, 5, 0, 12, 1)
+%<tlcSetupRuntimeResourcesFcnOfS10B4>\
+%<tlcSetupRuntimeResourcesFcnOfS10B5>\
+rtB.cqzfaecv4m = rtP.RT13_InitialCondition;
+rtB.bvjoabbgen = rtP.RT5_InitialCondition;
+for (i = 0; i < 6; i++) {
+    rtB.pvqul3j2kd[i] = rtP.RT9_InitialCondition;
+}
+for (i = 0; i < 36; i++) {
+    rtB.h33i3u05hi[i] = rtP.RT15_InitialCondition;
+}
+for (i = 0; i < 6; i++) {
+    rtB.lqpivh20ue[i] = rtP.RT_InitialCondition;
+    rtB.brgnx55w3z[i] = rtP.RT1_InitialCondition;
+}
+for (i = 0; i < 36; i++) {
+    rtB.gadvm22wd1[i] = rtP.RT2_InitialCondition;
+}
+rtB.fefh0hhvrv = rtP.RT6_InitialCondition;
+for (i = 0; i < 9; i++) {
+    rtB.if5diqfxfu[i] = rtP.RT8_InitialCondition;
+}
+for (i = 0; i < 81; i++) {
+    rtB.patf3kg4ld[i] = rtP.RT16_InitialCondition;
+}
+rtB.pikkkhsqyn = rtP.T_S;
+for (i = 0; i < 9; i++) {
+    rtB.etvej00kls[i] = rtP.RT4_InitialCondition;
+}
+rtB.h32fmflu3p = rtP.Constant_Value;
+rtDW.iaddyvzw5e.matlabCodegenIsDeleted = false;
+rtDW.anrjfxjefd = true;
+rtDW.iaddyvzw5e.isInitialized = 1;
+/*  This line fixes the "implicit declaration" error */
+gate_initialize();
+rtDW.iaddyvzw5e.isSetupComplete = true;
+for (i = 0; i < 6; i++) {
+    rtB.pf1bcrl5dc[i] = rtP.RT11_InitialCondition;
+}
+for (i = 0; i < 9; i++) {
+    rtB.b3yhnwjth4[i] = rtP.RT12_InitialCondition;
+}
+for (i = 0; i < 36; i++) {
+    rtB.a4mpu0tcou[i] = rtP.RT3_InitialCondition;
+}
+for (i = 0; i < 81; i++) {
+    rtB.beqtta0fdy[i] = rtP.RT14_InitialCondition;
+}
+rtDW.mqw4ah30w5 = true;
+rtDW.dfi5apd23s.isInitialized = 1;
+rtDW.mhyvkdo2ux.matlabCodegenIsDeleted = false;
+rtDW.hxoj3qbhn2 = true;
+rtDW.mhyvkdo2ux.isInitialized = 1;
+/*  Initialize the state variables */
+rtDW.mhyvkdo2ux.t_hold = 0.0;
+rtDW.mhyvkdo2ux.w_hold = 0.0;
+rtDW.mhyvkdo2ux.l_hold = 0.0;
+init_serial();
+rtDW.mhyvkdo2ux.isSetupComplete = true;
+for (i = 0; i < 20; i++) {
+    rtDW.lvyyr1smre[i] = false;
+}
+rtDW.itimx2tbt5 = true;
+for (i = 0; i < 20; i++) {
+    rtDW.mznmhfvmea[i] = NULL;
+}
+rtDW.kmhvvetfe2 = true;
+for (i = 0; i < 6; i++) {
+    rtDW.gocvwhon5y.GateData[i] = 0.0;
+}
+memset(&rtDW.gocvwhon5y.AggData[0], 0, 9U * sizeof(real_T));
+memset(&rtDW.gocvwhon5y.PgData[0], 0, 36U * sizeof(real_T));
+memset(&rtDW.gocvwhon5y.PaData[0], 0, 81U * sizeof(real_T));
+rtDW.gciqwqedw2 = true;
+rtDW.gocvwhon5y.isInitialized = 1;
+%<(SLibCGCallSubFcn("lyo1ts0zb3", ["&rtDW.gocvwhon5y", "tid"], 0, 12, 0))>;
+%closefile cfgTxt
+%<cfgTxt>
+%<LibSetSystemField(system, "CachedStartLocalVars", localVarDecl)>
+%endfunction
+%function StartFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Start(\
+%assign comma = ""
+%if SLibCG_ArgAccessed(0, 12, 0)
+%<comma>int32_T tid\
+%assign comma = ", "
+%endif
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 12, fcnProtoType)>
+%endfunction

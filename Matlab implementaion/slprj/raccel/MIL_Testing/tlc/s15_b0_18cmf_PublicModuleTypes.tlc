@@ -1,0 +1,76 @@
+%implements s15_b0_18cmf_PublicModuleTypes "C"
+
+%function PublicModuleTypes(block) Output
+
+
+#ifndef struct_tag_UDwz3Uob6MPNofPSsuvmmF
+#define struct_tag_UDwz3Uob6MPNofPSsuvmmF
+struct tag_UDwz3Uob6MPNofPSsuvmmF
+{
+    boolean_T matlabCodegenIsDeleted;
+    int32_T isInitialized;
+    boolean_T isSetupComplete;
+};
+#endif /* struct_tag_UDwz3Uob6MPNofPSsuvmmF */
+#ifndef typedef_iotyzgkdcn
+#define typedef_iotyzgkdcn
+typedef struct tag_UDwz3Uob6MPNofPSsuvmmF iotyzgkdcn;
+#endif /* typedef_iotyzgkdcn */
+#ifndef struct_tag_4vqvcJHuxTqKh4eNWFGz5G
+#define struct_tag_4vqvcJHuxTqKh4eNWFGz5G
+struct tag_4vqvcJHuxTqKh4eNWFGz5G
+{
+    boolean_T matlabCodegenIsDeleted;
+    int32_T isInitialized;
+    boolean_T isSetupComplete;
+    real_T t_hold;
+    real_T w_hold;
+    real_T l_hold;
+};
+#endif /* struct_tag_4vqvcJHuxTqKh4eNWFGz5G */
+#ifndef typedef_mfrw1nqxwz
+#define typedef_mfrw1nqxwz
+typedef struct tag_4vqvcJHuxTqKh4eNWFGz5G mfrw1nqxwz;
+#endif /* typedef_mfrw1nqxwz */
+#ifndef struct_tag_aZgM0qY75B0yuiLDMF1rBE
+#define struct_tag_aZgM0qY75B0yuiLDMF1rBE
+struct tag_aZgM0qY75B0yuiLDMF1rBE
+{
+    int32_T isInitialized;
+};
+#endif /* struct_tag_aZgM0qY75B0yuiLDMF1rBE */
+#ifndef typedef_doah2ritxs
+#define typedef_doah2ritxs
+typedef struct tag_aZgM0qY75B0yuiLDMF1rBE doah2ritxs;
+#endif /* typedef_doah2ritxs */
+#ifndef struct_tag_gtckAvmHGMmoBXcyQItmSB
+#define struct_tag_gtckAvmHGMmoBXcyQItmSB
+struct tag_gtckAvmHGMmoBXcyQItmSB
+{
+    int32_T isInitialized;
+    real_T GateData[6];
+    real_T AggData[9];
+    real_T PgData[36];
+    real_T PaData[81];
+};
+#endif /* struct_tag_gtckAvmHGMmoBXcyQItmSB */
+#ifndef typedef_icoaoz3rgd
+#define typedef_icoaoz3rgd
+typedef struct tag_gtckAvmHGMmoBXcyQItmSB icoaoz3rgd;
+#endif /* typedef_icoaoz3rgd */
+#ifndef struct_emxArray_char_T
+#define struct_emxArray_char_T
+struct emxArray_char_T
+{
+    char_T *data;
+    int32_T *size;
+    int32_T allocatedSize;
+    int32_T numDimensions;
+    boolean_T canFreeData;
+};
+#endif /* struct_emxArray_char_T */
+#ifndef typedef_jmwbldc2a4
+#define typedef_jmwbldc2a4
+typedef struct emxArray_char_T jmwbldc2a4;
+#endif /* typedef_jmwbldc2a4 */
+%endfunction

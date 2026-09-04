@@ -1,0 +1,187 @@
+%implements s15_b0_18cmf_Update "C"
+
+%function UpdateForTID(block, system, tid) Output
+%if tid == 0
+%assign ::GlobalCurrentTID = 0
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%openfile localVarDecl
+
+int32_T i;
+uint32_T idxDelay;
+int8_T wrBufIdx;
+%closefile localVarDecl
+if (%<(SLibCGIRIsSampleHit(3, 15))>) {
+    %<(SLibCGIRMutexOp(1, "rtDW.db0zscnkw5"))>;
+    wrBufIdx = (int8_T)(rtDW.ieyig5nl2r + 1);
+    if (wrBufIdx == 3) {
+        wrBufIdx = 0;
+    }
+    if (wrBufIdx == rtDW.f3pfkie500) {
+        wrBufIdx++;
+        if (wrBufIdx == 3) {
+            wrBufIdx = 0;
+        }
+    }
+    %<(SLibCGIRMutexOp(2, "rtDW.db0zscnkw5"))>;
+    rtDW.dfuabdacjg[wrBufIdx] = rtB.p2z4dysdkk;
+    rtDW.ieyig5nl2r = wrBufIdx;
+}
+if (%<(SLibCGIRIsSampleHit(2, 15))>) {
+    %<(SLibCGIRMutexOp(1, "rtDW.dnagvmiwyz"))>;
+    wrBufIdx = (int8_T)(rtDW.eyofepozhc + 1);
+    if (wrBufIdx == 3) {
+        wrBufIdx = 0;
+    }
+    if (wrBufIdx == rtDW.d3gd2okwfo) {
+        wrBufIdx++;
+        if (wrBufIdx == 3) {
+            wrBufIdx = 0;
+        }
+    }
+    %<(SLibCGIRMutexOp(2, "rtDW.dnagvmiwyz"))>;
+    rtDW.dtytunz3lh[wrBufIdx] = rtB.hvbnpziw45;
+    rtDW.eyofepozhc = wrBufIdx;
+    %<(SLibCGIRMutexOp(1, "rtDW.l1qkwlxbe2"))>;
+    wrBufIdx = (int8_T)(rtDW.nfs34xvx3j + 1);
+    if (wrBufIdx == 3) {
+        wrBufIdx = 0;
+    }
+    if (wrBufIdx == rtDW.id2fpjvnxd) {
+        wrBufIdx++;
+        if (wrBufIdx == 3) {
+            wrBufIdx = 0;
+        }
+    }
+    %<(SLibCGIRMutexOp(2, "rtDW.l1qkwlxbe2"))>;
+    for (i = 0; i < 6; i++) {
+        rtDW.cfze1vz5si[i + wrBufIdx * 6] = rtB.i5dfrly4pb[i];
+    }
+    rtDW.nfs34xvx3j = wrBufIdx;
+    %<(SLibCGIRMutexOp(1, "rtDW.nx3phiwl4b"))>;
+    wrBufIdx = (int8_T)(rtDW.a3irhgkhqf + 1);
+    if (wrBufIdx == 3) {
+        wrBufIdx = 0;
+    }
+    if (wrBufIdx == rtDW.laoagnfzfl) {
+        wrBufIdx++;
+        if (wrBufIdx == 3) {
+            wrBufIdx = 0;
+        }
+    }
+    %<(SLibCGIRMutexOp(2, "rtDW.nx3phiwl4b"))>;
+    for (i = 0; i < 36; i++) {
+        rtDW.cmrxwx2p1q[i + wrBufIdx * 36] = rtB.etbnu02wn1[i];
+    }
+    rtDW.a3irhgkhqf = wrBufIdx;
+}
+if (%<(SLibCGIRIsSampleHit(0, 15))>) {
+    rtDW.hhlnbopwgg = false;
+    rtDW.gdsdxwwrls[0] = rtB.fp5jsybcvt[0];
+    rtDW.gdsdxwwrls[1] = rtB.fp5jsybcvt[1];
+    rtDW.gdsdxwwrls[2] = rtB.fp5jsybcvt[2];
+    rtDW.gdsdxwwrls[3] = rtB.fp5jsybcvt[3];
+    rtDW.oq5400tj5g = false;
+    memcpy(&rtDW.lttdumcp5j[0], &rtB.eehwwvbcbw[0], sizeof(real_T) << 4U);
+}
+if (%<(SLibCGIRIsSampleHit(2, 15))>) {
+    %<(SLibCGIRMutexOp(1, "rtDW.bivy2tgpmo"))>;
+    wrBufIdx = (int8_T)(rtDW.enpaf0a13a + 1);
+    if (wrBufIdx == 3) {
+        wrBufIdx = 0;
+    }
+    if (wrBufIdx == rtDW.k53yka44us) {
+        wrBufIdx++;
+        if (wrBufIdx == 3) {
+            wrBufIdx = 0;
+        }
+    }
+    %<(SLibCGIRMutexOp(2, "rtDW.bivy2tgpmo"))>;
+    rtDW.hvzeco2ore[wrBufIdx] = rtB.j2ny3wc1th;
+    rtDW.enpaf0a13a = wrBufIdx;
+    rtDW.elg2z4i5mu = rtB.psxllogfzm;
+    %<(SLibCGIRMutexOp(1, "rtDW.ock4n01zv1"))>;
+    wrBufIdx = (int8_T)(rtDW.iz2nl50abi + 1);
+    if (wrBufIdx == 3) {
+        wrBufIdx = 0;
+    }
+    if (wrBufIdx == rtDW.klxzw4td0l) {
+        wrBufIdx++;
+        if (wrBufIdx == 3) {
+            wrBufIdx = 0;
+        }
+    }
+    %<(SLibCGIRMutexOp(2, "rtDW.ock4n01zv1"))>;
+    for (i = 0; i < 9; i++) {
+        rtDW.mvtpbffmvi[i + wrBufIdx * 9] = rtB.hqfbb0iret[i];
+    }
+    rtDW.iz2nl50abi = wrBufIdx;
+    %<(SLibCGIRMutexOp(1, "rtDW.nscvg2w1jd"))>;
+    wrBufIdx = (int8_T)(rtDW.hcrq1cfyt5 + 1);
+    if (wrBufIdx == 3) {
+        wrBufIdx = 0;
+    }
+    if (wrBufIdx == rtDW.lbjnlc1mss) {
+        wrBufIdx++;
+        if (wrBufIdx == 3) {
+            wrBufIdx = 0;
+        }
+    }
+    %<(SLibCGIRMutexOp(2, "rtDW.nscvg2w1jd"))>;
+    for (i = 0; i < 81; i++) {
+        rtDW.fqe0q3cfrn[i + wrBufIdx * 81] = rtB.erku2k0xec[i];
+    }
+    rtDW.hcrq1cfyt5 = wrBufIdx;
+    rtDW.iivzqnnafg = rtB.j2ny3wc1th;
+}
+if (%<(SLibCGIRIsSampleHit(1, 15))>) {
+    rtDW.bu35rqhgl2 = rtB.bxq1yx2osy;
+    rtDW.mylvjdtbzz = rtB.fvtkpm0qz5[0];
+    for (idxDelay = 0U; idxDelay < 499U; idxDelay++) {
+        rtDW.f5xs1ejhyz[idxDelay] = rtDW.f5xs1ejhyz[idxDelay + 1U];
+    }
+    rtDW.f5xs1ejhyz[499] = rtB.brgnx55w3z[0];
+    rtDW.lsaexnvsj1 = false;
+    memcpy(&rtDW.fqdojjx4ds[0], &rtB.fvtkpm0qz5[0], 9U * sizeof(real_T));
+    rtDW.bfe0f4zwx2 = false;
+    memcpy(&rtDW.ntup2lurc4[0], &rtB.glmvikibjo[0], sizeof(real_T) << 4U);
+}
+%closefile cfgTxt
+%<cfgTxt>
+%<LibSetSystemField(system, "CachedUpdateLocalVars", localVarDecl)>
+%assign ::GlobalCurrentTID = []
+%endif
+%if tid == 4
+%assign ::GlobalCurrentTID = 4
+%assign ::GlobalCurrentTID = []
+%endif
+%if tid == 5
+%assign ::GlobalCurrentTID = 5
+%assign ::GlobalCurrentTID = []
+%endif
+%endfunction
+%function UpdateFcnProtoTypeForTID(block, system, tid) Output
+%if tid == 0
+%assign ::GlobalCurrentTID = 0
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Update0(\
+%assign comma = ""
+%if SLibCG_ArgAccessed(0, 16, 0)
+%<comma>int32_T tid\
+%assign comma = ", "
+%endif
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 16, fcnProtoType)>
+%assign ::GlobalCurrentTID = []
+%endif
+%if tid == 4
+%assign ::GlobalCurrentTID = 4
+%assign ::GlobalCurrentTID = []
+%endif
+%if tid == 5
+%assign ::GlobalCurrentTID = 5
+%assign ::GlobalCurrentTID = []
+%endif
+%endfunction

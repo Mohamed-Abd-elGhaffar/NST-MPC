@@ -1,0 +1,60 @@
+%implements "chartSource" "C"
+%function ChartConfig(block, system) void
+  %createrecord chartConfiguration { ...
+          executeAtInitialization  0 ...
+  }
+  %return chartConfiguration
+%endfunction
+%function ChartDataMap(block, system) void
+  %createrecord ChartDataElements {\
+    NumChartData   6 \
+    ChartDataDefaults {\
+      RecordType   "ChartData"\
+      Dimensions   []\
+      IsTestPoint  0\
+    }\
+    ChartData {\
+      Name         "tk_prev"\
+      Description  "EmlPersistent"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "C:\Users\nabil\OneDrive\Documents\MATLAB\smart batch\hardwareTesting\G3efar\Transport_time.m:146-153"\
+    }\
+    ChartData {\
+      Name         "tk_prev_not_empty"\
+      Description  "EmlPersistentSentinel"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "C:\Users\nabil\OneDrive\Documents\MATLAB\smart batch\hardwareTesting\G3efar\Transport_time.m:146-153"\
+    }\
+    ChartData {\
+      Name         "state"\
+      Description  "EmlPersistent"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "C:\Users\nabil\OneDrive\Documents\MATLAB\smart batch\hardwareTesting\G3efar\Transport_time.m:154-159"\
+    }\
+    ChartData {\
+      Name         "T_i"\
+      Description  "EmlPersistent"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "C:\Users\nabil\OneDrive\Documents\MATLAB\smart batch\hardwareTesting\G3efar\Transport_time.m:160-163"\
+    }\
+    ChartData {\
+      Name         "T_f"\
+      Description  "EmlPersistent"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "C:\Users\nabil\OneDrive\Documents\MATLAB\smart batch\hardwareTesting\G3efar\Transport_time.m:164-167"\
+    }\
+    ChartData {\
+      Name         "td_prev"\
+      Description  "EmlPersistent"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "C:\Users\nabil\OneDrive\Documents\MATLAB\smart batch\hardwareTesting\G3efar\Transport_time.m:168-175"\
+    }\
+  }
+  %return ChartDataElements
+%endfunction

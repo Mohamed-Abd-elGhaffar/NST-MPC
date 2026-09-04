@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MF0 version="1.1" packageUris="http://schema.mathworks.com/mf0/slsa_mm_param_graph/R2021b">
+  <slsa.mm.param.graph.VariableRegistry type="slsa.mm.param.graph.VariableRegistry" uuid="a84c6da2-86d3-404e-8212-c7ab62c89e68">
+    <blockParameters type="slsa.mm.param.graph.BlockParameter" uuid="a44b05a6-5fa1-4b50-9753-cc2c6f1ddecd">
+      <blockPath>MIL_Testing/EKF_agg/State_only/Detect Change1/Delay Input1</blockPath>
+      <parameterName>InitialCondition</parameterName>
+      <expression type="slsa.mm.param.graph.Expression" uuid="1ffeeb6e-a5f2-4944-8ce7-0cd9a4a05c08"/>
+      <needsEvaluationResult>false</needsEvaluationResult>
+      <tunabilityType>Nontunable</tunabilityType>
+    </blockParameters>
+    <blockParameters type="slsa.mm.param.graph.BlockParameter" uuid="9a5e5130-f487-4153-926a-e29d4971c1b7">
+      <blockPath>MIL_Testing/EKF_gate/Subsystem/Constant</blockPath>
+      <parameterName>Value</parameterName>
+      <expression type="slsa.mm.param.graph.Expression" uuid="78acf9f0-b372-4418-af78-f507919deb3b"/>
+      <valueAttributes type="slsa.mm.param.graph.ValueAttributes" uuid="111f78f3-cc34-4ace-906c-851be7765f44">
+        <className>double</className>
+        <dimensions>4</dimensions>
+        <dimensions>4</dimensions>
+      </valueAttributes>
+    </blockParameters>
+    <blockParameters type="slsa.mm.param.graph.BlockParameter" uuid="cf09f240-7997-4e69-827a-4e7daf84110e">
+      <blockPath>MIL_Testing/EKF_agg/State_only/Subsystem/Delay</blockPath>
+      <parameterName>SampleTime</parameterName>
+      <expression type="slsa.mm.param.graph.Expression" uuid="609a846c-a003-42bc-8d4b-197ca89fc425"/>
+      <needsEvaluationResult>false</needsEvaluationResult>
+      <tunabilityType>Nontunable</tunabilityType>
+    </blockParameters>
+    <blockParameters type="slsa.mm.param.graph.BlockParameter" uuid="d6684b1e-43c1-419f-8f3b-d232ad1a358d">
+      <blockPath>MIL_Testing/EKF_agg/State_only/Subsystem/Zero-Order Hold</blockPath>
+      <parameterName>SampleTime</parameterName>
+      <expression type="slsa.mm.param.graph.Expression" uuid="609a846c-a003-42bc-8d4b-197ca89fc425"/>
+      <needsEvaluationResult>false</needsEvaluationResult>
+      <tunabilityType>Nontunable</tunabilityType>
+    </blockParameters>
+    <blockParameters type="slsa.mm.param.graph.BlockParameter" uuid="ee733908-4f52-42ac-a40a-2963d601aa51">
+      <blockPath>MIL_Testing/EKF_agg/State_only/Subsystem/Delay1</blockPath>
+      <parameterName>SampleTime</parameterName>
+      <expression type="slsa.mm.param.graph.Expression" uuid="609a846c-a003-42bc-8d4b-197ca89fc425"/>
+      <needsEvaluationResult>false</needsEvaluationResult>
+      <tunabilityType>Nontunable</tunabilityType>
+    </blockParameters>
+    <blockParameters type="slsa.mm.param.graph.BlockParameter" uuid="6503a847-ab9f-4e63-a28a-a10d04b2cad3">
+      <blockPath>MIL_Testing/EKF_agg/State_only/Subsystem/Zero-Order Hold1</blockPath>
+      <parameterName>SampleTime</parameterName>
+      <expression type="slsa.mm.param.graph.Expression" uuid="609a846c-a003-42bc-8d4b-197ca89fc425"/>
+      <needsEvaluationResult>false</needsEvaluationResult>
+      <tunabilityType>Nontunable</tunabilityType>
+    </blockParameters>
+    <expressions type="slsa.mm.param.graph.Expression" uuid="ba287ad4-23d0-4be0-877d-fc1115460481">
+      <expression>0</expression>
+      <users type="slsa.mm.param.graph.VariableDefinition" uuid="7d375370-b5e5-4afa-8e9a-5357a49ef68c"/>
+    </expressions>
+    <expressions type="slsa.mm.param.graph.Expression" uuid="1ffeeb6e-a5f2-4944-8ce7-0cd9a4a05c08">
+      <expression>vinit</expression>
+      <users type="slsa.mm.param.graph.BlockParameter" uuid="a44b05a6-5fa1-4b50-9753-cc2c6f1ddecd"/>
+      <variables type="slsa.mm.param.graph.Variable" uuid="78ecac05-cef8-4e38-9e68-e4c519328eb8"/>
+    </expressions>
+    <expressions type="slsa.mm.param.graph.Expression" uuid="609a846c-a003-42bc-8d4b-197ca89fc425">
+      <expression>T_S</expression>
+      <users type="slsa.mm.param.graph.BlockParameter" uuid="cf09f240-7997-4e69-827a-4e7daf84110e"/>
+      <users type="slsa.mm.param.graph.BlockParameter" uuid="d6684b1e-43c1-419f-8f3b-d232ad1a358d"/>
+      <users type="slsa.mm.param.graph.BlockParameter" uuid="ee733908-4f52-42ac-a40a-2963d601aa51"/>
+      <users type="slsa.mm.param.graph.BlockParameter" uuid="6503a847-ab9f-4e63-a28a-a10d04b2cad3"/>
+      <variables type="slsa.mm.param.graph.Variable" uuid="5a28c646-1bf4-4321-b1bf-f27f488e5c13"/>
+    </expressions>
+    <expressions type="slsa.mm.param.graph.Expression" uuid="78acf9f0-b372-4418-af78-f507919deb3b">
+      <expression>Q_OPT_scaled(1:4,1:4)</expression>
+      <users type="slsa.mm.param.graph.BlockParameter" uuid="9a5e5130-f487-4153-926a-e29d4971c1b7"/>
+      <variables type="slsa.mm.param.graph.Variable" uuid="51bfbdb7-049d-4df5-b960-ce3847e024e3"/>
+    </expressions>
+    <name>MIL_Testing</name>
+    <variableDefinitions type="slsa.mm.param.graph.VariableDefinition" uuid="7d375370-b5e5-4afa-8e9a-5357a49ef68c">
+      <variable type="slsa.mm.param.graph.Variable" uuid="78ecac05-cef8-4e38-9e68-e4c519328eb8"/>
+      <expression type="slsa.mm.param.graph.Expression" uuid="ba287ad4-23d0-4be0-877d-fc1115460481"/>
+    </variableDefinitions>
+    <variables type="slsa.mm.param.graph.Variable" uuid="78ecac05-cef8-4e38-9e68-e4c519328eb8">
+      <definition type="slsa.mm.param.graph.VariableDefinition" uuid="7d375370-b5e5-4afa-8e9a-5357a49ef68c"/>
+      <expressions type="slsa.mm.param.graph.Expression" uuid="1ffeeb6e-a5f2-4944-8ce7-0cd9a4a05c08"/>
+      <name>vinit</name>
+      <workspace type="slsa.mm.param.graph.Workspace" uuid="3a020995-ad26-41f8-ba69-6e538a414179"/>
+    </variables>
+    <variables type="slsa.mm.param.graph.Variable" uuid="9e75f422-6d13-46e0-bd68-5b8418101e7b">
+      <name>Q_opt_scaled</name>
+      <workspace type="slsa.mm.param.graph.Workspace" uuid="f934e123-4680-4117-83a7-96bc2f7988ab"/>
+    </variables>
+    <variables type="slsa.mm.param.graph.Variable" uuid="5a28c646-1bf4-4321-b1bf-f27f488e5c13">
+      <expressions type="slsa.mm.param.graph.Expression" uuid="609a846c-a003-42bc-8d4b-197ca89fc425"/>
+      <name>T_S</name>
+      <workspace type="slsa.mm.param.graph.Workspace" uuid="f934e123-4680-4117-83a7-96bc2f7988ab"/>
+    </variables>
+    <variables type="slsa.mm.param.graph.Variable" uuid="51bfbdb7-049d-4df5-b960-ce3847e024e3">
+      <expressions type="slsa.mm.param.graph.Expression" uuid="78acf9f0-b372-4418-af78-f507919deb3b"/>
+      <name>Q_OPT_scaled</name>
+      <workspace type="slsa.mm.param.graph.Workspace" uuid="f934e123-4680-4117-83a7-96bc2f7988ab"/>
+    </variables>
+    <workspaces type="slsa.mm.param.graph.Workspace" uuid="3a020995-ad26-41f8-ba69-6e538a414179">
+      <name>MIL_Testing/EKF_agg/State_only/Detect Change1</name>
+      <type>MASK</type>
+      <variables type="slsa.mm.param.graph.Variable" uuid="78ecac05-cef8-4e38-9e68-e4c519328eb8"/>
+    </workspaces>
+    <workspaces type="slsa.mm.param.graph.Workspace" uuid="f934e123-4680-4117-83a7-96bc2f7988ab">
+      <name>global-workspace</name>
+      <variables type="slsa.mm.param.graph.Variable" uuid="9e75f422-6d13-46e0-bd68-5b8418101e7b"/>
+      <variables type="slsa.mm.param.graph.Variable" uuid="5a28c646-1bf4-4321-b1bf-f27f488e5c13"/>
+      <variables type="slsa.mm.param.graph.Variable" uuid="51bfbdb7-049d-4df5-b960-ce3847e024e3"/>
+    </workspaces>
+    <contextManager type="slsa.mm.param.graph.ContextManager" uuid="bd8dd409-9f90-4f18-8c0b-182f8da19ce1"/>
+  </slsa.mm.param.graph.VariableRegistry>
+</MF0>

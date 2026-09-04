@@ -1,0 +1,12 @@
+%implements s15_b0_18cmf_ModuleConstants "C"
+
+%function ModuleConstants(block) Output
+
+
+/* Named constants for Chart: '<S5>/Chart' */
+#define ggyq1nnjti (-1)
+#define jqd3skjaxt (3U)
+#define krs03bzthl (2U)
+#define lyzpn5djti (1U)
+#define pqgj4r14l2 ((uint8_T)0U)
+%endfunction

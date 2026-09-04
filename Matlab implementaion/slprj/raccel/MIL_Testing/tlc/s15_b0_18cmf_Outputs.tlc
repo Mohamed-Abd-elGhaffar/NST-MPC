@@ -1,0 +1,1102 @@
+%implements s15_b0_18cmf_Outputs "C"
+
+%function OutputsForTID(block, system, tid) Output
+%if tid == 0
+%assign ::GlobalCurrentTID = 0
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%openfile localVarDecl
+
+__m128d tmp_e;
+__m128d tmp_g;
+__m128d tmp_i;
+__m128d tmp_m;
+real_T J[16];
+real_T J_e[16];
+real_T J_p[16];
+real_T P_prior[16];
+real_T x_dot_nominal_p[16];
+real_T x_old[5];
+real_T x_dot_nominal[4];
+real_T x_next_data[4];
+real_T x_perturbed[4];
+real_T Constant2_Value;
+real_T W;
+real_T d51o05gnza;
+real_T ezr04tarlh;
+real_T lvhn4dkd3f;
+real_T tmp;
+real_T tmp_p;
+real_T x_dot_nominal_e;
+real_T x_dot_nominal_i;
+int32_T inColLength;
+int32_T j;
+int32_T k;
+int32_T status;
+int32_T vectorStart;
+int16_T fua0fnk3n5;
+int8_T a;
+boolean_T kqyjkyaxtt;
+%<::tSimStructType> *S;
+void *diag;
+static const int8_T c[16] = %<(TLC_STR_CTX(12))>;
+static const int8_T b[4] = %<(TLC_STR_CTX(13))>;
+static const real_T c_p[4] = %<(TLC_STR_CTX(14))>;
+static const int8_T d[4] = %<(TLC_STR_CTX(15))>;
+real_T tmp_j[4];
+int32_T ay2k3rvcmw_idx_0;
+int32_T ay2k3rvcmw_idx_1;
+int32_T k51uwbuqio_idx_0;
+int32_T k51uwbuqio_idx_1;
+%closefile localVarDecl
+%assign _modelSS = ""
+
+%if SLibCG_FcnCallArgAccessed(0,14,3,2)
+%<SLibCG_AccessArg(0 ,14, 0)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(0,14,2,4)
+%<SLibCG_AccessArg(0 ,14, 0)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(0,14,1,4)
+%<SLibCG_AccessArg(0 ,14, 0)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(0,14,0,4)
+%<SLibCG_AccessArg(0 ,14, 0)>
+%endif
+
+%assign tlcOutputsFcnOfS10B4 = OpaqueTLCBlockFcn("Outputs", 10, 4, 0, 14, 0)
+%assign tlcOutputsFcnOfS10B5 = OpaqueTLCBlockFcn("Outputs", 10, 5, 0, 14, 1)
+%<SLibGetRootInportsFromFile(system, TLC_FALSE)>
+%<SLibGenerateExtModeOutput(system)>
+if (%<(SLibCGIRIsSampleHit(0, 15))>) {
+    %<(SLibCGIRMutexOp(1, "rtDW.db0zscnkw5"))>;
+    rtDW.f3pfkie500 = rtDW.ieyig5nl2r;
+    %<(SLibCGIRMutexOp(2, "rtDW.db0zscnkw5"))>;
+    rtB.cqzfaecv4m = rtDW.dfuabdacjg[rtDW.f3pfkie500];
+    %<(SLibCGIRMutexOp(1, "rtDW.dnagvmiwyz"))>;
+    rtDW.d3gd2okwfo = rtDW.eyofepozhc;
+    %<(SLibCGIRMutexOp(2, "rtDW.dnagvmiwyz"))>;
+    rtB.bvjoabbgen = rtDW.dtytunz3lh[rtDW.d3gd2okwfo];
+    %<(SLibCGIRMutexOp(1, "rtDW.l1qkwlxbe2"))>;
+    rtDW.id2fpjvnxd = rtDW.nfs34xvx3j;
+    %<(SLibCGIRMutexOp(2, "rtDW.l1qkwlxbe2"))>;
+    status = rtDW.id2fpjvnxd * 6;
+    for (j = 0; j < 6; j++) {
+        rtB.pvqul3j2kd[j] = rtDW.cfze1vz5si[j + status];
+    }
+    %<(SLibCGIRMutexOp(1, "rtDW.nx3phiwl4b"))>;
+    rtDW.laoagnfzfl = rtDW.a3irhgkhqf;
+    %<(SLibCGIRMutexOp(2, "rtDW.nx3phiwl4b"))>;
+    status = rtDW.laoagnfzfl * 36;
+    for (j = 0; j < 36; j++) {
+        rtB.h33i3u05hi[j] = rtDW.cmrxwx2p1q[j + status];
+    }
+    if (%<(SLibCG_SE(LibGetTaskTime(0)))> < rtP.Step1_Time_jhzgxk3yrg) {
+        lvhn4dkd3f = rtP.Step1_Y0_m5vq2soeo1;
+    } else {
+        lvhn4dkd3f = rtP.Step1_YFinal_kfqz044alp;
+    }
+    if (%<(SLibCG_SE(SLibCGIRZCFcn("FALLING_ZERO_CROSSING", "rtPrevZCX.lbklrmk5g2", "lvhn4dkd3f", 0)))> != NO_ZCEVENT) {
+        rtDW.hhlnbopwgg = true;
+    }
+    if (rtDW.hhlnbopwgg) {
+        rtDW.gdsdxwwrls[0] = rtB.pvqul3j2kd[0];
+        rtDW.gdsdxwwrls[1] = rtB.pvqul3j2kd[1];
+        rtDW.gdsdxwwrls[2] = rtB.pvqul3j2kd[2];
+        rtDW.gdsdxwwrls[3] = rtB.pvqul3j2kd[3];
+    }
+    if (%<(SLibCG_SE(SLibCGIRZCFcn("FALLING_ZERO_CROSSING", "rtPrevZCX.et435gabll", "lvhn4dkd3f", 0)))> != NO_ZCEVENT) {
+        rtDW.oq5400tj5g = true;
+    }
+    if (rtDW.oq5400tj5g) {
+        status = 0;
+        j = 0;
+        for (inColLength = 0; inColLength < 4; inColLength++) {
+            rtDW.lttdumcp5j[status] = rtB.h33i3u05hi[j];
+            rtDW.lttdumcp5j[status + 1] = rtB.h33i3u05hi[j + 1];
+            rtDW.lttdumcp5j[status + 2] = rtB.h33i3u05hi[j + 2];
+            rtDW.lttdumcp5j[status + 3] = rtB.h33i3u05hi[j + 3];
+            status += 4;
+            j += 6;
+        }
+    }
+    rtDW.jpqljbfpq2 = ggyq1nnjti;
+    rtB.fp5jsybcvt[0] = rtDW.gdsdxwwrls[0];
+    rtB.fp5jsybcvt[1] = rtDW.gdsdxwwrls[1];
+    rtB.fp5jsybcvt[2] = rtDW.gdsdxwwrls[2];
+    rtB.fp5jsybcvt[3] = rtDW.gdsdxwwrls[3];
+    for (status = 0; status < 10; status++) {
+        for (j = 0; j < 4; j++) {
+            tmp_j[j] = rtB.fp5jsybcvt[j];
+        }
+        %<(SLibCGCallSubFcn("dclxlgkizc", ["tmp_j", "rtB.cqzfaecv4m", "2.0E-5", "rtB.fp5jsybcvt", "tid"], 0, 14, 0))>;
+    }
+    %<(SLibCGCallSubFcn("dclxlgkizc", ["rtDW.gdsdxwwrls", "rtB.cqzfaecv4m", "0.0002", "x_dot_nominal", "tid"], 0, 14, 1))>;
+    d51o05gnza = x_dot_nominal[0];
+    W = x_dot_nominal[1];
+    x_dot_nominal_e = x_dot_nominal[2];
+    x_dot_nominal_i = x_dot_nominal[3];
+    status = 0;
+    for (j = 0; j < 4; j++) {
+        x_perturbed[0] = rtDW.gdsdxwwrls[0];
+        x_perturbed[1] = rtDW.gdsdxwwrls[1];
+        x_perturbed[2] = rtDW.gdsdxwwrls[2];
+        x_perturbed[3] = rtDW.gdsdxwwrls[3];
+        x_perturbed[j] = rtDW.gdsdxwwrls[j] + 1.0E-7;
+        %<(SLibCGCallSubFcn("dclxlgkizc", ["x_perturbed", "rtB.cqzfaecv4m", "0.0002", "tmp_j", "tid"], 0, 14, 2))>;
+        J[status] = (tmp_j[0] - d51o05gnza) / 1.0E-7;
+        J[status + 1] = (tmp_j[1] - W) / 1.0E-7;
+        J[status + 2] = (tmp_j[2] - x_dot_nominal_e) / 1.0E-7;
+        J[status + 3] = (tmp_j[3] - x_dot_nominal_i) / 1.0E-7;
+        status += 4;
+    }
+    if (rtP.Constant5_Value != 0.0) {
+        memset(&rtB.eehwwvbcbw[0], 0, sizeof(real_T) << 4U);
+    } else {
+        status = 0;
+        for (j = 0; j < 4; j++) {
+            d51o05gnza = 0.0;
+            W = 0.0;
+            x_dot_nominal_e = 0.0;
+            x_dot_nominal_i = 0.0;
+            inColLength = 0;
+            for (k = 0; k < 4; k++) {
+                Constant2_Value = rtDW.lttdumcp5j[k + status];
+                d51o05gnza += J[inColLength] * Constant2_Value;
+                W += J[inColLength + 1] * Constant2_Value;
+                x_dot_nominal_e += J[inColLength + 2] * Constant2_Value;
+                x_dot_nominal_i += J[inColLength + 3] * Constant2_Value;
+                inColLength += 4;
+            }
+            J_p[status + 3] = x_dot_nominal_i;
+            J_p[status + 2] = x_dot_nominal_e;
+            J_p[status + 1] = W;
+            J_p[status] = d51o05gnza;
+            status += 4;
+        }
+        Constant2_Value = 0.0;
+        for (status = 0; status < 4; status++) {
+            d51o05gnza = J_p[status + 4];
+            W = J_p[status];
+            x_dot_nominal_e = J_p[status + 8];
+            x_dot_nominal_i = J_p[status + 12];
+            j = 0;
+            for (inColLength = 0; inColLength < 4; inColLength++) {
+                P_prior[j + status] = (((J[inColLength + 4] * d51o05gnza + W * J[inColLength]) + J[inColLength + 8] * x_dot_nominal_e) + J[inColLength + 12] * x_dot_nominal_i) + rtP.Constant_Value_hxrizr0yv5[j + status];
+                j += 4;
+            }
+            Constant2_Value += rtP.Constant2_Value[status] * rtB.fp5jsybcvt[status];
+        }
+        ezr04tarlh = rtB.bvjoabbgen - Constant2_Value;
+        Constant2_Value = 0.0;
+        status = 0;
+        for (j = 0; j < 4; j++) {
+            Constant2_Value += (((P_prior[status + 1] * rtP.Constant2_Value[1] + P_prior[status] * rtP.Constant2_Value[0]) + P_prior[status + 2] * rtP.Constant2_Value[2]) + P_prior[status + 3] * rtP.Constant2_Value[3]) * rtP.Constant2_Value[j];
+            status += 4;
+        }
+        lvhn4dkd3f = Constant2_Value + rtP.Constant1_Value_mrtympucbq;
+        Constant2_Value = rtP.Constant2_Value[1];
+        d51o05gnza = rtP.Constant2_Value[0];
+        W = rtP.Constant2_Value[2];
+        x_dot_nominal_e = rtP.Constant2_Value[3];
+        for (status = 0; status <= 2; status += 2) {
+            tmp_e = _mm_loadu_pd(&P_prior[status + 4]);
+            tmp_i = _mm_loadu_pd(&P_prior[status]);
+            tmp_m = _mm_loadu_pd(&P_prior[status + 8]);
+            tmp_g = _mm_loadu_pd(&P_prior[status + 12]);
+            _mm_storeu_pd(&x_dot_nominal[status], _mm_div_pd(_mm_add_pd(_mm_add_pd(_mm_add_pd(_mm_mul_pd(tmp_e, _mm_set1_pd(Constant2_Value)), _mm_mul_pd(tmp_i, _mm_set1_pd(d51o05gnza))), _mm_mul_pd(tmp_m, _mm_set1_pd(W))), _mm_mul_pd(tmp_g, _mm_set1_pd(x_dot_nominal_e))), _mm_set1_pd(lvhn4dkd3f)));
+        }
+        d51o05gnza = x_dot_nominal[0];
+        W = x_dot_nominal[1];
+        x_dot_nominal_e = x_dot_nominal[2];
+        x_dot_nominal_i = x_dot_nominal[3];
+        status = 0;
+        for (j = 0; j < 4; j++) {
+            Constant2_Value = rtP.Constant2_Value[j];
+            J[status] = (real_T)c[status] - d51o05gnza * Constant2_Value;
+            J_p[status] = 0.0;
+            J[status + 1] = (real_T)c[status + 1] - W * Constant2_Value;
+            J_p[status + 1] = 0.0;
+            J[status + 2] = (real_T)c[status + 2] - x_dot_nominal_e * Constant2_Value;
+            J_p[status + 2] = 0.0;
+            J[status + 3] = (real_T)c[status + 3] - x_dot_nominal_i * Constant2_Value;
+            J_p[status + 3] = 0.0;
+            status += 4;
+        }
+        status = 0;
+        for (j = 0; j < 4; j++) {
+            d51o05gnza = J_p[status];
+            W = J_p[status + 1];
+            x_dot_nominal_e = J_p[status + 2];
+            x_dot_nominal_i = J_p[status + 3];
+            inColLength = 0;
+            for (k = 0; k < 4; k++) {
+                Constant2_Value = rtDW.lttdumcp5j[k + status];
+                d51o05gnza += J[inColLength] * Constant2_Value;
+                W += J[inColLength + 1] * Constant2_Value;
+                x_dot_nominal_e += J[inColLength + 2] * Constant2_Value;
+                x_dot_nominal_i += J[inColLength + 3] * Constant2_Value;
+                J_e[k + status] = 0.0;
+                inColLength += 4;
+            }
+            J_p[status + 3] = x_dot_nominal_i;
+            J_p[status + 2] = x_dot_nominal_e;
+            J_p[status + 1] = W;
+            J_p[status] = d51o05gnza;
+            status += 4;
+        }
+        status = 0;
+        for (j = 0; j < 4; j++) {
+            d51o05gnza = J_e[status];
+            W = J_e[status + 1];
+            x_dot_nominal_e = J_e[status + 2];
+            x_dot_nominal_i = J_e[status + 3];
+            inColLength = 0;
+            for (k = 0; k < 4; k++) {
+                Constant2_Value = J[inColLength + j];
+                d51o05gnza += J_p[inColLength] * Constant2_Value;
+                W += J_p[inColLength + 1] * Constant2_Value;
+                x_dot_nominal_e += J_p[inColLength + 2] * Constant2_Value;
+                x_dot_nominal_i += J_p[inColLength + 3] * Constant2_Value;
+                x_dot_nominal_p[k + status] = x_dot_nominal[k] * rtP.Constant1_Value_mrtympucbq * x_dot_nominal[j];
+                inColLength += 4;
+            }
+            J_e[status + 3] = x_dot_nominal_i;
+            J_e[status + 2] = x_dot_nominal_e;
+            J_e[status + 1] = W;
+            J_e[status] = d51o05gnza;
+            status += 4;
+        }
+        for (status = 0; status <= 14; status += 2) {
+            tmp_e = _mm_loadu_pd(&J_e[status]);
+            tmp_i = _mm_loadu_pd(&x_dot_nominal_p[status]);
+            _mm_storeu_pd(&rtB.eehwwvbcbw[status], _mm_add_pd(tmp_e, tmp_i));
+        }
+        rtB.fp5jsybcvt[0] += x_dot_nominal[0] * ezr04tarlh;
+        rtB.fp5jsybcvt[1] += x_dot_nominal[1] * ezr04tarlh;
+        rtB.fp5jsybcvt[2] += x_dot_nominal[2] * ezr04tarlh;
+        rtB.fp5jsybcvt[3] += x_dot_nominal[3] * ezr04tarlh;
+    }
+    rtB.hqsluvo0cb[0] = rtB.fp5jsybcvt[0];
+    rtB.hqsluvo0cb[1] = rtB.fp5jsybcvt[1];
+    rtB.hqsluvo0cb[2] = rtB.fp5jsybcvt[2];
+    rtB.hqsluvo0cb[3] = rtB.fp5jsybcvt[3];
+    rtB.hqsluvo0cb[4] = rtP.Constant3_Value[0];
+    rtB.hqsluvo0cb[5] = rtP.Constant3_Value[1];
+    /* Length of input columns to copy. Start with output column length and adjust. */
+    inColLength = rtP.Pad1_outDims[0];
+    if (rtP.Pad1_padBefore[0U] > 0) {
+        inColLength = rtP.Pad1_outDims[0] - rtP.Pad1_padBefore[0];
+    }
+    if (rtP.Pad1_padAfter[0U] > 0) {
+        inColLength -= rtP.Pad1_padAfter[0];
+    }
+    /* Compute initial column start addresses in both input and output arrays. */
+    if (rtP.Pad1_padBefore[0] < 0) {
+        k51uwbuqio_idx_0 = -rtP.Pad1_padBefore[0];
+        ay2k3rvcmw_idx_0 = 0;
+    } else {
+        k51uwbuqio_idx_0 = 0;
+        ay2k3rvcmw_idx_0 = rtP.Pad1_padBefore[0];
+    }
+    if (rtP.Pad1_padBefore[1] < 0) {
+        k51uwbuqio_idx_1 = -rtP.Pad1_padBefore[1];
+        ay2k3rvcmw_idx_1 = 0;
+    } else {
+        k51uwbuqio_idx_1 = 0;
+        ay2k3rvcmw_idx_1 = rtP.Pad1_padBefore[1];
+    }
+    /* Copy all needed input columns to the output array. */
+    for (status = 0; status < 4; status++) {
+        /* Compute starting address of next column to copy. */
+        k = k51uwbuqio_idx_0 * rtP.Pad1_inWorkAdd[0] + k51uwbuqio_idx_1 * rtP.Pad1_inWorkAdd[1];
+        vectorStart = ay2k3rvcmw_idx_0 * rtP.Pad1_outWorkAdd[0] + ay2k3rvcmw_idx_1 * rtP.Pad1_outWorkAdd[1];
+        /* Copy a column from input to output array. */
+        for (j = 0; j < inColLength; j++) {
+            rtB.a1yyx12qwj[vectorStart + j] = rtB.eehwwvbcbw[k + j];
+        }
+        /* Increment the column starting address. */
+        j = k51uwbuqio_idx_1 + 1;
+        k51uwbuqio_idx_1++;
+        k = ay2k3rvcmw_idx_1 + 1;
+        ay2k3rvcmw_idx_1++;
+        if (((rtP.Pad1_outDims[1] - rtP.Pad1_padBefore[1]) - rtP.Pad1_padAfter[1] == j) || (k == rtP.Pad1_outDims[1])) {
+            /* Reset index of this dim and continue to the next dim. */
+            if (rtP.Pad1_padBefore[1] < 0) {
+                k51uwbuqio_idx_1 = -rtP.Pad1_padBefore[1];
+                ay2k3rvcmw_idx_1 = 0;
+            } else {
+                k51uwbuqio_idx_1 = 0;
+                ay2k3rvcmw_idx_1 = rtP.Pad1_padBefore[1];
+            }
+        } else {
+            /* Done incrementing address for this pass. */
+        }
+    }
+    /* end CopyInToOut. */
+    if ((rtP.Pad1_padBefore[0] > 0) || (rtP.Pad1_padAfter[0] > 0)) {
+        status = rtP.Pad1_outDims[1];
+        inColLength = rtP.Pad1_outDims[0];
+        if (rtP.Pad1_padBefore[0] > 0) {
+            inColLength = rtP.Pad1_outDims[0] - rtP.Pad1_padBefore[0];
+        }
+        if (rtP.Pad1_padAfter[0] > 0) {
+            inColLength -= rtP.Pad1_padAfter[0];
+        }
+        k51uwbuqio_idx_0 = 0;
+        for (j = 0; j < status; j++) {
+            for (k = 0; k < rtP.Pad1_padBefore[0]; k++) {
+                rtB.a1yyx12qwj[k51uwbuqio_idx_0] = rtP.Pad1_padVal;
+                k51uwbuqio_idx_0++;
+            }
+            k51uwbuqio_idx_0 += inColLength;
+            for (k = 0; k < rtP.Pad1_padAfter[0]; k++) {
+                rtB.a1yyx12qwj[k51uwbuqio_idx_0] = rtP.Pad1_padVal;
+                k51uwbuqio_idx_0++;
+            }
+        }
+    }
+    if ((rtP.Pad1_padBefore[1] > 0) || (rtP.Pad1_padAfter[1] > 0)) {
+        vectorStart = 0;
+        j = rtP.Pad1_outDims[0];
+        inColLength = rtP.Pad1_outDims[1];
+        if (rtP.Pad1_padBefore[1] > 0) {
+            inColLength = rtP.Pad1_outDims[1] - rtP.Pad1_padBefore[1];
+        }
+        if (rtP.Pad1_padAfter[1] > 0) {
+            inColLength -= rtP.Pad1_padAfter[1];
+        }
+        inColLength *= rtP.Pad1_outDims[0];
+        for (status = 0; status < j; status++) {
+            k51uwbuqio_idx_0 = vectorStart;
+            for (k = 0; k < rtP.Pad1_padBefore[1]; k++) {
+                rtB.a1yyx12qwj[k51uwbuqio_idx_0] = rtP.Pad1_padVal;
+                k51uwbuqio_idx_0 += j;
+            }
+            k51uwbuqio_idx_0 += inColLength;
+            for (k = 0; k < rtP.Pad1_padAfter[1]; k++) {
+                rtB.a1yyx12qwj[k51uwbuqio_idx_0] = rtP.Pad1_padVal;
+                k51uwbuqio_idx_0 += j;
+            }
+            vectorStart++;
+        }
+    }
+    /* end CGIR for Pad */
+    for (status = 0; status < 6; status++) {
+        rtDW.kstza1wr21[status] = rtDW.b2kfls1nvu[status];
+    }
+    for (status = 0; status < 6; status++) {
+        rtDW.b2kfls1nvu[status] = rtB.hqsluvo0cb[status];
+    }
+    rtDW.jpaa1akovd = %<(SLibCG_SE(LibGetTaskTime(0)))>;
+}
+if (%<(SLibCGIRIsSampleHit(3, 15))>) {
+    if (%<(SLibCG_SE(LibGetTaskTime(3)))> > rtDW.jpaa1akovd) {
+        for (status = 0; status < 6; status++) {
+            rtB.lqpivh20ue[status] = rtDW.b2kfls1nvu[status];
+        }
+    } else {
+        for (status = 0; status < 6; status++) {
+            rtB.lqpivh20ue[status] = rtDW.kstza1wr21[status];
+        }
+    }
+}
+if (%<(SLibCGIRIsSampleHit(0, 15))>) {
+    for (status = 0; status < 6; status++) {
+        rtDW.ew4umcwnpz[status] = rtDW.ppuxszxz4r[status];
+    }
+    for (status = 0; status < 6; status++) {
+        rtDW.ppuxszxz4r[status] = rtB.hqsluvo0cb[status];
+    }
+    rtDW.lgvzz3uvac = %<(SLibCG_SE(LibGetTaskTime(0)))>;
+}
+if (%<(SLibCGIRIsSampleHit(1, 15))>) {
+    if (%<(SLibCG_SE(LibGetTaskTime(1)))> > rtDW.lgvzz3uvac) {
+        for (status = 0; status < 6; status++) {
+            rtB.brgnx55w3z[status] = rtDW.ppuxszxz4r[status];
+        }
+    } else {
+        for (status = 0; status < 6; status++) {
+            rtB.brgnx55w3z[status] = rtDW.ew4umcwnpz[status];
+        }
+    }
+}
+if (%<(SLibCGIRIsSampleHit(0, 15))>) {
+    for (status = 0; status < 36; status++) {
+        rtDW.dmeue2mdbu[status] = rtDW.admijup4h5[status];
+    }
+    for (status = 0; status < 36; status++) {
+        rtDW.admijup4h5[status] = rtB.a1yyx12qwj[status];
+    }
+    rtDW.lnkw33l3jm = %<(SLibCG_SE(LibGetTaskTime(0)))>;
+}
+if (%<(SLibCGIRIsSampleHit(1, 15))>) {
+    if (%<(SLibCG_SE(LibGetTaskTime(1)))> > rtDW.lnkw33l3jm) {
+        for (status = 0; status < 36; status++) {
+            rtB.gadvm22wd1[status] = rtDW.admijup4h5[status];
+        }
+    } else {
+        for (status = 0; status < 36; status++) {
+            rtB.gadvm22wd1[status] = rtDW.dmeue2mdbu[status];
+        }
+    }
+    %<(SLibCGIRMutexOp(1, "rtDW.bivy2tgpmo"))>;
+    rtDW.k53yka44us = rtDW.enpaf0a13a;
+    %<(SLibCGIRMutexOp(2, "rtDW.bivy2tgpmo"))>;
+    rtB.fefh0hhvrv = rtDW.hvzeco2ore[rtDW.k53yka44us];
+    rtB.bxq1yx2osy = rtDW.elg2z4i5mu;
+    %<(SLibCGIRMutexOp(1, "rtDW.ock4n01zv1"))>;
+    rtDW.klxzw4td0l = rtDW.iz2nl50abi;
+    %<(SLibCGIRMutexOp(2, "rtDW.ock4n01zv1"))>;
+    status = rtDW.klxzw4td0l * 9;
+    for (j = 0; j < 9; j++) {
+        rtB.if5diqfxfu[j] = rtDW.mvtpbffmvi[j + status];
+    }
+    %<(SLibCGIRMutexOp(1, "rtDW.nscvg2w1jd"))>;
+    rtDW.lbjnlc1mss = rtDW.hcrq1cfyt5;
+    %<(SLibCGIRMutexOp(2, "rtDW.nscvg2w1jd"))>;
+    status = rtDW.lbjnlc1mss * 81;
+    for (j = 0; j < 81; j++) {
+        rtB.patf3kg4ld[j] = rtDW.fqe0q3cfrn[j + status];
+    }
+    kqyjkyaxtt = (rtB.bxq1yx2osy != rtDW.bu35rqhgl2);
+    rtDW.p2bhsxpbyc = ggyq1nnjti;
+    if (rtDW.mylvjdtbzz > 0.001) {
+        ezr04tarlh = 0.162;
+    } else {
+        ezr04tarlh = 0.401;
+    }
+    if (!rtDW.muonpkel4h) {
+        rtDW.m1idk3k2tk = true;
+        rtDW.dms2mdiz1w = ezr04tarlh;
+        rtDW.muonpkel4h = true;
+        rtDW.lw2y3timfi = true;
+        rtDW.epeaf4xlrc = true;
+        rtDW.fzhn5fgiww = true;
+    }
+    if (rtDW.gibqh3mz4d == 0) {
+        if (muDoubleScalarAbs(rtDW.dms2mdiz1w - ezr04tarlh) == 0.0) {
+            d51o05gnza = ezr04tarlh;
+            lvhn4dkd3f = 0.0;
+        } else {
+            rtDW.gibqh3mz4d = 1;
+            rtDW.ewkuxxlkqd = rtDW.dms2mdiz1w;
+            rtDW.afc0yw5r0h = ezr04tarlh;
+            d51o05gnza = (1.0 / rtDW.ewkuxxlkqd - 1.0 / rtDW.afc0yw5r0h) * rtB.pikkkhsqyn * rtDW.ewkuxxlkqd + rtDW.dms2mdiz1w;
+            lvhn4dkd3f = (1.0 / rtDW.ewkuxxlkqd - 1.0 / rtDW.afc0yw5r0h) * rtDW.ewkuxxlkqd;
+        }
+    } else {
+        d51o05gnza = (1.0 / rtDW.ewkuxxlkqd - 1.0 / rtDW.afc0yw5r0h) * rtB.pikkkhsqyn * rtDW.ewkuxxlkqd + rtDW.ik0deqdv52;
+        if (muDoubleScalarAbs(rtDW.ewkuxxlkqd - d51o05gnza) > muDoubleScalarAbs(rtDW.ewkuxxlkqd - rtDW.afc0yw5r0h)) {
+            d51o05gnza = ezr04tarlh;
+            rtDW.gibqh3mz4d = 0;
+        }
+        lvhn4dkd3f = (1.0 / rtDW.ewkuxxlkqd - 1.0 / rtDW.afc0yw5r0h) * rtDW.ewkuxxlkqd;
+    }
+    rtDW.ik0deqdv52 = d51o05gnza;
+    rtDW.dms2mdiz1w = ezr04tarlh;
+    Constant2_Value = muDoubleScalarRound(d51o05gnza / rtB.pikkkhsqyn);
+    if (Constant2_Value < 32768.0) {
+        if (Constant2_Value >= -32768.0) {
+            fua0fnk3n5 = (int16_T)Constant2_Value;
+        } else {
+            fua0fnk3n5 = MIN_int16_T;
+        }
+    } else if (Constant2_Value >= 32768.0) {
+        fua0fnk3n5 = MAX_int16_T;
+    } else {
+        fua0fnk3n5 = 0;
+    }
+    if ((rtP.VariableIntegerDelay_DiagnosticForDelayLength != 0) && ((fua0fnk3n5 < 0) || (fua0fnk3n5 > 500))) {
+        if (rtP.VariableIntegerDelay_DiagnosticForDelayLength == 1) {
+            S = %<::tSimStruct>;
+            diag = CreateDiagnosticAsVoidPtr("SimulinkBlocks:Delay:ParameterDelayLengthIsLessThanLowerLimitOrLargerThanUpperLimit", 7, 5, "MIL_Testing/EKF_agg/State_only/Subsystem/Variable Integer Delay", 3, "DelayLength", 3, "DelayLength", 1, fua0fnk3n5, 3, "DelayLength", 1, (int16_T)0, 1, (int16_T)500);
+            rt_ssReportDiagnosticAsWarning(S, diag);
+        } else {
+            S = %<::tSimStruct>;
+            diag = CreateDiagnosticAsVoidPtr("SimulinkBlocks:Delay:ParameterDelayLengthIsLessThanLowerLimitOrLargerThanUpperLimit", 7, 5, "MIL_Testing/EKF_agg/State_only/Subsystem/Variable Integer Delay", 3, "DelayLength", 3, "DelayLength", 1, fua0fnk3n5, 3, "DelayLength", 1, (int16_T)0, 1, (int16_T)500);
+            rt_ssSet_slErrMsg(S, diag);
+        }
+    }
+    if (fua0fnk3n5 <= 0) {
+        ezr04tarlh = rtB.brgnx55w3z[0];
+    } else {
+        if (fua0fnk3n5 > 500) {
+            fua0fnk3n5 = 500;
+        }
+        ezr04tarlh = rtDW.f5xs1ejhyz[(int16_T)(500 - fua0fnk3n5)];
+    }
+    if (%<(SLibCG_SE(LibGetTaskTime(1)))> < rtP.Step1_Time) {
+        d51o05gnza = rtP.Step1_Y0;
+    } else {
+        d51o05gnza = rtP.Step1_YFinal;
+    }
+    if (%<(SLibCG_SE(SLibCGIRZCFcn("FALLING_ZERO_CROSSING", "rtPrevZCX.mcel2q5oxa", "d51o05gnza", 0)))> != NO_ZCEVENT) {
+        rtDW.lsaexnvsj1 = true;
+    }
+    if (rtDW.lsaexnvsj1) {
+        memcpy(&rtDW.fqdojjx4ds[0], &rtB.if5diqfxfu[0], 9U * sizeof(real_T));
+    }
+    if (%<(SLibCG_SE(SLibCGIRZCFcn("FALLING_ZERO_CROSSING", "rtPrevZCX.dxnz1qecxv", "d51o05gnza", 0)))> != NO_ZCEVENT) {
+        rtDW.bfe0f4zwx2 = true;
+    }
+    if (rtDW.bfe0f4zwx2) {
+        status = 0;
+        j = 0;
+        for (inColLength = 0; inColLength < 4; inColLength++) {
+            rtDW.ntup2lurc4[status] = rtB.patf3kg4ld[j];
+            rtDW.ntup2lurc4[status + 1] = rtB.patf3kg4ld[j + 1];
+            rtDW.ntup2lurc4[status + 2] = rtB.patf3kg4ld[j + 2];
+            rtDW.ntup2lurc4[status + 3] = rtB.patf3kg4ld[j + 3];
+            status += 4;
+            j += 9;
+        }
+    }
+    rtDW.nbo010zast = ggyq1nnjti;
+    for (status = 0; status < 5; status++) {
+        x_old[status] = rtDW.fqdojjx4ds[status + 4];
+    }
+    memset(&rtB.fvtkpm0qz5[0], 0, 9U * sizeof(real_T));
+    d51o05gnza = 0.05 / (1.0 - lvhn4dkd3f);
+    W = muDoubleScalarSin(muDoubleScalarMax(ezr04tarlh, 0.1701) - 0.1701) * 0.09;
+    W = 6118.3333333333339 * muDoubleScalarMax(0.03, W) * muDoubleScalarPower(muDoubleScalarMin(0.03, W), 1.5);
+    x_dot_nominal_p[0] = -1.0 / d51o05gnza;
+    x_dot_nominal_p[4] = 0.0;
+    x_dot_nominal_p[8] = 0.0;
+    x_dot_nominal_p[12] = 0.0;
+    x_dot_nominal_p[1] = 1.0 - lvhn4dkd3f;
+    x_dot_nominal_p[5] = 0.0;
+    x_dot_nominal_p[9] = 0.0;
+    x_dot_nominal_p[13] = 0.0;
+    x_dot_nominal_p[2] = 0.0;
+    x_dot_nominal_p[3] = 681.40837989000011;
+    x_dot_nominal_e = 0.0;
+    x_dot_nominal_p[6] = 0.0;
+    x_dot_nominal_p[7] = 0.0;
+    x_dot_nominal_i = 0.0;
+    x_dot_nominal_p[10] = 0.0;
+    x_dot_nominal_p[11] = -3170.8161000000005;
+    tmp_p = 0.0;
+    x_dot_nominal_p[14] = 1.0;
+    x_dot_nominal_p[15] = -48.4266;
+    tmp = 0.0;
+    status = 0;
+    for (j = 0; j < 4; j++) {
+        Constant2_Value = rtDW.fqdojjx4ds[j];
+        x_dot_nominal_e += x_dot_nominal_p[status] * Constant2_Value;
+        x_dot_nominal_i += x_dot_nominal_p[status + 1] * Constant2_Value;
+        tmp_p += x_dot_nominal_p[status + 2] * Constant2_Value;
+        tmp += x_dot_nominal_p[status + 3] * Constant2_Value;
+        status += 4;
+    }
+    x_next_data[0] = (1.0 / d51o05gnza * W + x_dot_nominal_e) * rtB.pikkkhsqyn + rtDW.fqdojjx4ds[0];
+    x_next_data[1] = (0.0 * W + x_dot_nominal_i) * rtB.pikkkhsqyn + rtDW.fqdojjx4ds[1];
+    x_next_data[2] = (0.0 * W + tmp_p) * rtB.pikkkhsqyn + rtDW.fqdojjx4ds[2];
+    x_next_data[3] = (0.0 * W + tmp) * rtB.pikkkhsqyn + rtDW.fqdojjx4ds[3];
+    W = muDoubleScalarSin(muDoubleScalarMax(ezr04tarlh, 0.1701) - 0.1701) * 0.09;
+    d51o05gnza = 0.05 / (1.0 - lvhn4dkd3f);
+    memset(&J[0], 0, sizeof(real_T) << 4U);
+    J[0] = 1.0;
+    J[5] = 1.0;
+    J[10] = 1.0;
+    J[15] = 1.0;
+    tmp_j[0] = -1.0 / d51o05gnza * rtB.pikkkhsqyn;
+    tmp_j[1] = rtB.pikkkhsqyn * 0.0;
+    tmp_j[2] = rtB.pikkkhsqyn * 0.0;
+    tmp_j[3] = rtB.pikkkhsqyn * 0.0;
+    x_perturbed[0] = (1.0 - lvhn4dkd3f) * rtB.pikkkhsqyn;
+    x_perturbed[1] = rtB.pikkkhsqyn * 0.0;
+    x_perturbed[2] = rtB.pikkkhsqyn * 0.0;
+    x_perturbed[3] = rtB.pikkkhsqyn * 0.0;
+    if (W > 0.03) {
+        Constant2_Value = 31.791792572926745;
+    } else {
+        Constant2_Value = 9177.5 * muDoubleScalarSqrt(W) * 0.03;
+    }
+    if (ezr04tarlh > 0.1701) {
+        ezr04tarlh = muDoubleScalarCos(ezr04tarlh - 0.1701) * 0.09;
+    } else {
+        ezr04tarlh = 0.0;
+    }
+    lvhn4dkd3f = Constant2_Value * ezr04tarlh;
+    x_dot_nominal[0] = 1.0 / d51o05gnza * lvhn4dkd3f;
+    x_dot_nominal[1] = 0.0 * lvhn4dkd3f;
+    x_dot_nominal[2] = 0.0 * lvhn4dkd3f;
+    x_dot_nominal[3] = 0.0 * lvhn4dkd3f;
+    status = 0;
+    for (j = 0; j < 4; j++) {
+        P_prior[status] = J[status] + tmp_j[j];
+        P_prior[status + 1] = J[status + 1] + x_perturbed[j];
+        P_prior[status + 2] = J[status + 2] + rtB.pikkkhsqyn * (real_T)b[j];
+        P_prior[status + 3] = J[status + 3] + rtB.pikkkhsqyn * c_p[j];
+        J_p[status] = 0.0;
+        J_p[status + 1] = 0.0;
+        J_p[status + 2] = 0.0;
+        J_p[status + 3] = 0.0;
+        status += 4;
+    }
+    status = 0;
+    for (j = 0; j < 4; j++) {
+        ezr04tarlh = J_p[status];
+        lvhn4dkd3f = J_p[status + 1];
+        d51o05gnza = J_p[status + 2];
+        W = J_p[status + 3];
+        inColLength = 0;
+        for (k = 0; k < 4; k++) {
+            Constant2_Value = rtDW.ntup2lurc4[k + status];
+            ezr04tarlh += P_prior[inColLength] * Constant2_Value;
+            lvhn4dkd3f += P_prior[inColLength + 1] * Constant2_Value;
+            d51o05gnza += P_prior[inColLength + 2] * Constant2_Value;
+            W += P_prior[inColLength + 3] * Constant2_Value;
+            inColLength += 4;
+        }
+        J_p[status + 3] = W;
+        J_p[status + 2] = d51o05gnza;
+        J_p[status + 1] = lvhn4dkd3f;
+        J_p[status] = ezr04tarlh;
+        status += 4;
+    }
+    Constant2_Value = rtB.gadvm22wd1[0];
+    status = 0;
+    for (j = 0; j < 4; j++) {
+        ezr04tarlh = J_p[j + 4];
+        lvhn4dkd3f = J_p[j];
+        d51o05gnza = J_p[j + 8];
+        W = J_p[j + 12];
+        inColLength = 0;
+        for (k = 0; k < 4; k++) {
+            J[inColLength + j] = (((P_prior[k + 4] * ezr04tarlh + lvhn4dkd3f * P_prior[k]) + P_prior[k + 8] * d51o05gnza) + P_prior[k + 12] * W) + rtP.Q_opt_scaled[inColLength + j];
+            x_dot_nominal_p[k + status] = x_dot_nominal[k] * Constant2_Value * x_dot_nominal[j];
+            inColLength += 4;
+        }
+        status += 4;
+    }
+    for (status = 0; status <= 14; status += 2) {
+        tmp_e = _mm_loadu_pd(&J[status]);
+        tmp_i = _mm_loadu_pd(&x_dot_nominal_p[status]);
+        _mm_storeu_pd(&P_prior[status], _mm_add_pd(tmp_e, tmp_i));
+    }
+    if (!kqyjkyaxtt) {
+        memcpy(&rtB.glmvikibjo[0], &P_prior[0], sizeof(real_T) << 4U);
+        ezr04tarlh = 0.0;
+        lvhn4dkd3f = 0.0;
+        rtB.fvtkpm0qz5[0] = x_next_data[0];
+        rtB.fvtkpm0qz5[1] = x_next_data[1];
+        rtB.fvtkpm0qz5[2] = x_next_data[2];
+        rtB.fvtkpm0qz5[3] = x_next_data[3];
+        for (status = 0; status < 5; status++) {
+            rtB.fvtkpm0qz5[status + 4] = x_old[status];
+        }
+    } else {
+        ezr04tarlh = rtB.fefh0hhvrv - (x_next_data[1] + x_next_data[2]);
+        lvhn4dkd3f = 0.0;
+        status = 0;
+        for (j = 0; j < 4; j++) {
+            lvhn4dkd3f += (((P_prior[status] * 0.0 + P_prior[status + 1]) + P_prior[status + 2]) + P_prior[status + 3] * 0.0) * (real_T)d[j];
+            status += 4;
+        }
+        lvhn4dkd3f += rtP.Constant1_Value;
+        for (status = 0; status <= 2; status += 2) {
+            tmp_e = _mm_loadu_pd(&P_prior[status]);
+            tmp_i = _mm_loadu_pd(&P_prior[status + 4]);
+            tmp_m = _mm_loadu_pd(&P_prior[status + 8]);
+            tmp_g = _mm_loadu_pd(&P_prior[status + 12]);
+            _mm_storeu_pd(&x_dot_nominal[status], _mm_div_pd(_mm_add_pd(_mm_add_pd(_mm_add_pd(_mm_mul_pd(tmp_e, _mm_set1_pd(0.0)), tmp_i), tmp_m), _mm_mul_pd(tmp_g, _mm_set1_pd(0.0))), _mm_set1_pd(lvhn4dkd3f)));
+        }
+        d51o05gnza = x_dot_nominal[0];
+        W = x_dot_nominal[1];
+        x_dot_nominal_e = x_dot_nominal[2];
+        x_dot_nominal_i = x_dot_nominal[3];
+        status = 0;
+        for (j = 0; j < 4; j++) {
+            a = d[j];
+            J[status] = (real_T)c[status] - d51o05gnza * (real_T)a;
+            J_p[status] = 0.0;
+            J[status + 1] = (real_T)c[status + 1] - W * (real_T)a;
+            J_p[status + 1] = 0.0;
+            J[status + 2] = (real_T)c[status + 2] - x_dot_nominal_e * (real_T)a;
+            J_p[status + 2] = 0.0;
+            J[status + 3] = (real_T)c[status + 3] - x_dot_nominal_i * (real_T)a;
+            J_p[status + 3] = 0.0;
+            status += 4;
+        }
+        status = 0;
+        for (j = 0; j < 4; j++) {
+            d51o05gnza = J_p[status];
+            W = J_p[status + 1];
+            x_dot_nominal_e = J_p[status + 2];
+            x_dot_nominal_i = J_p[status + 3];
+            inColLength = 0;
+            for (k = 0; k < 4; k++) {
+                Constant2_Value = P_prior[k + status];
+                d51o05gnza += J[inColLength] * Constant2_Value;
+                W += J[inColLength + 1] * Constant2_Value;
+                x_dot_nominal_e += J[inColLength + 2] * Constant2_Value;
+                x_dot_nominal_i += J[inColLength + 3] * Constant2_Value;
+                J_e[k + status] = 0.0;
+                inColLength += 4;
+            }
+            J_p[status + 3] = x_dot_nominal_i;
+            J_p[status + 2] = x_dot_nominal_e;
+            J_p[status + 1] = W;
+            J_p[status] = d51o05gnza;
+            status += 4;
+        }
+        status = 0;
+        for (j = 0; j < 4; j++) {
+            d51o05gnza = J_e[status];
+            W = J_e[status + 1];
+            x_dot_nominal_e = J_e[status + 2];
+            x_dot_nominal_i = J_e[status + 3];
+            inColLength = 0;
+            for (k = 0; k < 4; k++) {
+                Constant2_Value = J[inColLength + j];
+                d51o05gnza += J_p[inColLength] * Constant2_Value;
+                W += J_p[inColLength + 1] * Constant2_Value;
+                x_dot_nominal_e += J_p[inColLength + 2] * Constant2_Value;
+                x_dot_nominal_i += J_p[inColLength + 3] * Constant2_Value;
+                x_dot_nominal_p[k + status] = x_dot_nominal[k] * rtP.Constant1_Value * x_dot_nominal[j];
+                inColLength += 4;
+            }
+            J_e[status + 3] = x_dot_nominal_i;
+            J_e[status + 2] = x_dot_nominal_e;
+            J_e[status + 1] = W;
+            J_e[status] = d51o05gnza;
+            status += 4;
+        }
+        for (status = 0; status <= 14; status += 2) {
+            tmp_e = _mm_loadu_pd(&J_e[status]);
+            tmp_i = _mm_loadu_pd(&x_dot_nominal_p[status]);
+            _mm_storeu_pd(&rtB.glmvikibjo[status], _mm_add_pd(tmp_e, tmp_i));
+        }
+        rtB.fvtkpm0qz5[0] = x_dot_nominal[0] * ezr04tarlh + x_next_data[0];
+        rtB.fvtkpm0qz5[1] = x_dot_nominal[1] * ezr04tarlh + x_next_data[1];
+        rtB.fvtkpm0qz5[2] = x_dot_nominal[2] * ezr04tarlh + x_next_data[2];
+        rtB.fvtkpm0qz5[3] = x_dot_nominal[3] * ezr04tarlh + x_next_data[3];
+        for (status = 0; status < 5; status++) {
+            rtB.fvtkpm0qz5[status + 4] = x_old[status];
+        }
+    }
+    rtB.eub55bvmvf = ezr04tarlh;
+    rtB.efbbsnpjmh = lvhn4dkd3f;
+    /* Length of input columns to copy. Start with output column length and adjust. */
+    inColLength = rtP.Pad_outDims[0];
+    if (rtP.Pad_padBefore[0U] > 0) {
+        inColLength = rtP.Pad_outDims[0] - rtP.Pad_padBefore[0];
+    }
+    if (rtP.Pad_padAfter[0U] > 0) {
+        inColLength -= rtP.Pad_padAfter[0];
+    }
+    /* Compute initial column start addresses in both input and output arrays. */
+    if (rtP.Pad_padBefore[0] < 0) {
+        k51uwbuqio_idx_0 = -rtP.Pad_padBefore[0];
+        ay2k3rvcmw_idx_0 = 0;
+    } else {
+        k51uwbuqio_idx_0 = 0;
+        ay2k3rvcmw_idx_0 = rtP.Pad_padBefore[0];
+    }
+    if (rtP.Pad_padBefore[1] < 0) {
+        k51uwbuqio_idx_1 = -rtP.Pad_padBefore[1];
+        ay2k3rvcmw_idx_1 = 0;
+    } else {
+        k51uwbuqio_idx_1 = 0;
+        ay2k3rvcmw_idx_1 = rtP.Pad_padBefore[1];
+    }
+    /* Copy all needed input columns to the output array. */
+    for (status = 0; status < 4; status++) {
+        /* Compute starting address of next column to copy. */
+        k = k51uwbuqio_idx_0 * rtP.Pad_inWorkAdd[0] + k51uwbuqio_idx_1 * rtP.Pad_inWorkAdd[1];
+        vectorStart = ay2k3rvcmw_idx_0 * rtP.Pad_outWorkAdd[0] + ay2k3rvcmw_idx_1 * rtP.Pad_outWorkAdd[1];
+        /* Copy a column from input to output array. */
+        for (j = 0; j < inColLength; j++) {
+            rtB.hoqedt04ko[vectorStart + j] = rtB.glmvikibjo[k + j];
+        }
+        /* Increment the column starting address. */
+        j = k51uwbuqio_idx_1 + 1;
+        k51uwbuqio_idx_1++;
+        k = ay2k3rvcmw_idx_1 + 1;
+        ay2k3rvcmw_idx_1++;
+        if (((rtP.Pad_outDims[1] - rtP.Pad_padBefore[1]) - rtP.Pad_padAfter[1] == j) || (k == rtP.Pad_outDims[1])) {
+            /* Reset index of this dim and continue to the next dim. */
+            if (rtP.Pad_padBefore[1] < 0) {
+                k51uwbuqio_idx_1 = -rtP.Pad_padBefore[1];
+                ay2k3rvcmw_idx_1 = 0;
+            } else {
+                k51uwbuqio_idx_1 = 0;
+                ay2k3rvcmw_idx_1 = rtP.Pad_padBefore[1];
+            }
+        } else {
+            /* Done incrementing address for this pass. */
+        }
+    }
+    /* end CopyInToOut. */
+    if ((rtP.Pad_padBefore[0] > 0) || (rtP.Pad_padAfter[0] > 0)) {
+        status = rtP.Pad_outDims[1];
+        inColLength = rtP.Pad_outDims[0];
+        if (rtP.Pad_padBefore[0] > 0) {
+            inColLength = rtP.Pad_outDims[0] - rtP.Pad_padBefore[0];
+        }
+        if (rtP.Pad_padAfter[0] > 0) {
+            inColLength -= rtP.Pad_padAfter[0];
+        }
+        k51uwbuqio_idx_0 = 0;
+        for (j = 0; j < status; j++) {
+            for (k = 0; k < rtP.Pad_padBefore[0]; k++) {
+                rtB.hoqedt04ko[k51uwbuqio_idx_0] = rtP.Pad_padVal;
+                k51uwbuqio_idx_0++;
+            }
+            k51uwbuqio_idx_0 += inColLength;
+            for (k = 0; k < rtP.Pad_padAfter[0]; k++) {
+                rtB.hoqedt04ko[k51uwbuqio_idx_0] = rtP.Pad_padVal;
+                k51uwbuqio_idx_0++;
+            }
+        }
+    }
+    if ((rtP.Pad_padBefore[1] > 0) || (rtP.Pad_padAfter[1] > 0)) {
+        vectorStart = 0;
+        j = rtP.Pad_outDims[0];
+        inColLength = rtP.Pad_outDims[1];
+        if (rtP.Pad_padBefore[1] > 0) {
+            inColLength = rtP.Pad_outDims[1] - rtP.Pad_padBefore[1];
+        }
+        if (rtP.Pad_padAfter[1] > 0) {
+            inColLength -= rtP.Pad_padAfter[1];
+        }
+        inColLength *= rtP.Pad_outDims[0];
+        for (status = 0; status < j; status++) {
+            k51uwbuqio_idx_0 = vectorStart;
+            for (k = 0; k < rtP.Pad_padBefore[1]; k++) {
+                rtB.hoqedt04ko[k51uwbuqio_idx_0] = rtP.Pad_padVal;
+                k51uwbuqio_idx_0 += j;
+            }
+            k51uwbuqio_idx_0 += inColLength;
+            for (k = 0; k < rtP.Pad_padAfter[1]; k++) {
+                rtB.hoqedt04ko[k51uwbuqio_idx_0] = rtP.Pad_padVal;
+                k51uwbuqio_idx_0 += j;
+            }
+            vectorStart++;
+        }
+    }
+    /* end CGIR for Pad */
+%<tlcOutputsFcnOfS10B4>\
+%<tlcOutputsFcnOfS10B5>\
+    for (status = 0; status < 9; status++) {
+        rtDW.halwmwe2x0[status] = rtDW.c2dnexkmxf[status];
+    }
+    for (status = 0; status < 9; status++) {
+        rtDW.c2dnexkmxf[status] = rtB.fvtkpm0qz5[status];
+    }
+    rtDW.nlhsncexf0 = %<(SLibCG_SE(LibGetTaskTime(1)))>;
+}
+if (%<(SLibCGIRIsSampleHit(3, 15))>) {
+    if (%<(SLibCG_SE(LibGetTaskTime(3)))> > rtDW.nlhsncexf0) {
+        for (status = 0; status < 9; status++) {
+            rtB.etvej00kls[status] = rtDW.c2dnexkmxf[status];
+        }
+    } else {
+        for (status = 0; status < 9; status++) {
+            rtB.etvej00kls[status] = rtDW.halwmwe2x0[status];
+        }
+    }
+    rtDW.m4aiafke1l = ggyq1nnjti;
+    if (rtDW.oondctc5l0 < 3) {
+        rtDW.oondctc5l0++;
+    }
+    if (rtDW.mpn3siyqln == 0) {
+        rtDW.mpn3siyqln = 1U;
+        rtDW.oondctc5l0 = 0U;
+        rtDW.gkfiwnekx2 = krs03bzthl;
+    } else {
+        switch (rtDW.gkfiwnekx2) {
+          case lyzpn5djti:
+            rtB.p2z4dysdkk = 0.0;
+            break;
+          case krs03bzthl:
+            if (muDoubleScalarIsNaN(rtDW.cmxfapw5jf)) {
+                rtDW.oondctc5l0 = 0U;
+                rtDW.gkfiwnekx2 = krs03bzthl;
+            } else if ((rtDW.m4aiafke1l == ggyq1nnjti) && (rtDW.oondctc5l0 >= 3)) {
+                rtDW.gkfiwnekx2 = jqd3skjaxt;
+            } else {
+                rtDW.cmxfapw5jf = %<(SLibCGCallSubFcn("aelvll5v1w", ["&rtB.lqpivh20ue[4]", "&rtB.etvej00kls[4]", "tid"], 0, 14, 3))>;
+                rtB.p2z4dysdkk = 1.0;
+            }
+            break;
+          default:
+            /* case IN_Open: */
+            if (rtB.h32fmflu3p - rtB.etvej00kls[1] < rtDW.cmxfapw5jf) {
+                rtDW.gkfiwnekx2 = lyzpn5djti;
+            } else {
+                rtB.p2z4dysdkk = 1.0;
+            }
+            break;
+        }
+    }
+    gate_state(!(rtB.p2z4dysdkk != 0.0));
+}
+if (%<(SLibCGIRIsSampleHit(0, 15))>) {
+    for (status = 0; status < 6; status++) {
+        rtDW.h4yjnfwxyj[status] = rtDW.bgcbhaqa0v[status];
+    }
+    for (status = 0; status < 6; status++) {
+        rtDW.bgcbhaqa0v[status] = rtB.hqsluvo0cb[status];
+    }
+    rtDW.mgieiokwlg = %<(SLibCG_SE(LibGetTaskTime(0)))>;
+}
+if (%<(SLibCGIRIsSampleHit(2, 15))>) {
+    if (%<(SLibCG_SE(LibGetTaskTime(2)))> > rtDW.mgieiokwlg) {
+        for (status = 0; status < 6; status++) {
+            rtB.pf1bcrl5dc[status] = rtDW.bgcbhaqa0v[status];
+        }
+    } else {
+        for (status = 0; status < 6; status++) {
+            rtB.pf1bcrl5dc[status] = rtDW.h4yjnfwxyj[status];
+        }
+    }
+}
+if (%<(SLibCGIRIsSampleHit(1, 15))>) {
+    for (status = 0; status < 9; status++) {
+        rtDW.l2yr52gncr[status] = rtDW.ezsyklwnq5[status];
+    }
+    for (status = 0; status < 9; status++) {
+        rtDW.ezsyklwnq5[status] = rtB.fvtkpm0qz5[status];
+    }
+    rtDW.kaofucg0ce = %<(SLibCG_SE(LibGetTaskTime(1)))>;
+}
+if (%<(SLibCGIRIsSampleHit(2, 15))>) {
+    if (%<(SLibCG_SE(LibGetTaskTime(2)))> > rtDW.kaofucg0ce) {
+        for (status = 0; status < 9; status++) {
+            rtB.b3yhnwjth4[status] = rtDW.ezsyklwnq5[status];
+        }
+    } else {
+        for (status = 0; status < 9; status++) {
+            rtB.b3yhnwjth4[status] = rtDW.l2yr52gncr[status];
+        }
+    }
+}
+if (%<(SLibCGIRIsSampleHit(0, 15))>) {
+    for (status = 0; status < 36; status++) {
+        rtDW.id31qo414u[status] = rtDW.jyvxuxxqjf[status];
+    }
+    for (status = 0; status < 36; status++) {
+        rtDW.jyvxuxxqjf[status] = rtB.a1yyx12qwj[status];
+    }
+    rtDW.i4vu5e54ap = %<(SLibCG_SE(LibGetTaskTime(0)))>;
+}
+if (%<(SLibCGIRIsSampleHit(2, 15))>) {
+    if (%<(SLibCG_SE(LibGetTaskTime(2)))> > rtDW.i4vu5e54ap) {
+        for (status = 0; status < 36; status++) {
+            rtB.a4mpu0tcou[status] = rtDW.jyvxuxxqjf[status];
+        }
+    } else {
+        for (status = 0; status < 36; status++) {
+            rtB.a4mpu0tcou[status] = rtDW.id31qo414u[status];
+        }
+    }
+}
+if (%<(SLibCGIRIsSampleHit(1, 15))>) {
+    for (status = 0; status < 81; status++) {
+        rtDW.ihu2yalc0n[status] = rtDW.pil0xca4t5[status];
+    }
+    for (status = 0; status < 81; status++) {
+        rtDW.pil0xca4t5[status] = rtB.hoqedt04ko[status];
+    }
+    rtDW.iwm01ftkab = %<(SLibCG_SE(LibGetTaskTime(1)))>;
+}
+if (%<(SLibCGIRIsSampleHit(2, 15))>) {
+    if (%<(SLibCG_SE(LibGetTaskTime(2)))> > rtDW.iwm01ftkab) {
+        for (status = 0; status < 81; status++) {
+            rtB.beqtta0fdy[status] = rtDW.pil0xca4t5[status];
+        }
+    } else {
+        for (status = 0; status < 81; status++) {
+            rtB.beqtta0fdy[status] = rtDW.ihu2yalc0n[status];
+        }
+    }
+    /*  Default outputs to the values stored in properties */
+    rtB.hvbnpziw45 = rtDW.mhyvkdo2ux.w_hold;
+    rtB.j2ny3wc1th = rtDW.mhyvkdo2ux.l_hold;
+    /*  Create temp variables for C to write into */
+    lvhn4dkd3f = 0.0;
+    ezr04tarlh = 0.0;
+    d51o05gnza = 0.0;
+    /*  Initialize status (required for code generation) */
+    /*  Call C function */
+    status = read_serial_data(&lvhn4dkd3f, &ezr04tarlh, &d51o05gnza);
+    if (status == 1) {
+        /*  --- FIX 2: Update the Object Properties --- */
+        rtDW.mhyvkdo2ux.t_hold = lvhn4dkd3f;
+        rtDW.mhyvkdo2ux.w_hold = ezr04tarlh;
+        rtDW.mhyvkdo2ux.l_hold = d51o05gnza;
+        /*  Update outputs for this immediate step */
+        rtB.hvbnpziw45 = ezr04tarlh;
+        rtB.j2ny3wc1th = d51o05gnza;
+    }
+    rtB.psxllogfzm = (rtB.j2ny3wc1th != rtDW.iivzqnnafg);
+    /*         %<"\%\% Mandatory for Code Generation with Propagates mixin"> */
+    /*  We now have 4 output ports */
+    /*  Output the cached values */
+    for (status = 0; status < 6; status++) {
+        rtB.i5dfrly4pb[status] = rtDW.gocvwhon5y.GateData[status];
+    }
+    memcpy(&rtB.hqfbb0iret[0], &rtDW.gocvwhon5y.AggData[0], 9U * sizeof(real_T));
+    memcpy(&rtB.etbnu02wn1[0], &rtDW.gocvwhon5y.PgData[0], 36U * sizeof(real_T));
+    memcpy(&rtB.erku2k0xec[0], &rtDW.gocvwhon5y.PaData[0], 81U * sizeof(real_T));
+}
+%<SLibInsertSolverResetCode()>\
+%closefile cfgTxt
+%<cfgTxt>
+%<LibSetSystemField(system, "CachedOutputLocalVars", localVarDecl)>
+%assign ::GlobalCurrentTID = []
+%endif
+%if tid == 4
+%assign ::GlobalCurrentTID = 4
+%assign ::GlobalCurrentTID = []
+%endif
+%if tid == 5
+%assign ::GlobalCurrentTID = 5
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+rtB.pikkkhsqyn = rtP.T_S;
+rtB.h32fmflu3p = rtP.Constant_Value;
+%closefile cfgTxt
+%<cfgTxt>
+%<LibSetSystemField(system, "CachedOutput5LocalVars", localVarDecl)>
+%assign ::GlobalCurrentTID = []
+%endif
+%endfunction
+%function OutputsFcnProtoTypeForTID(block, system, tid) Output
+%if tid == 0
+%assign ::GlobalCurrentTID = 0
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Outputs0(\
+%assign comma = ""
+%if SLibCG_ArgAccessed(0, 14, 0)
+%<comma>int32_T tid\
+%assign comma = ", "
+%endif
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 14, fcnProtoType)>
+%assign ::GlobalCurrentTID = []
+%endif
+%if tid == 4
+%assign ::GlobalCurrentTID = 4
+%assign ::GlobalCurrentTID = []
+%endif
+%if tid == 5
+%assign ::GlobalCurrentTID = 5
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Outputs2(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 15, fcnProtoType)>
+%assign ::GlobalCurrentTID = []
+%endif
+%endfunction

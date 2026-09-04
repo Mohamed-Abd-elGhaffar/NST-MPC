@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MF0 version="1.1" packageUris="http://schema.mathworks.com/mf0/slsa_mm_param_rtp/R2023a">
+  <slsa.mm.param.rtp.ModelMetadata type="slsa.mm.param.rtp.ModelMetadata" uuid="ff03cc99-2086-4f88-ad39-e4bb4539532a">
+    <modelName>MIL_Testing</modelName>
+  </slsa.mm.param.rtp.ModelMetadata>
+  <slsa.mm.param.rtp.Parameter type="slsa.mm.param.rtp.Parameter" uuid="a0e2ca16-89f6-4a24-89d6-7df898115467">
+    <id type="slsa.mm.param.rtp.VariableId" uuid="a5341a04-9b3f-4f85-a783-deada99d0798"/>
+    <rtpLocation type="slsa.mm.param.rtp.RtpLocation" uuid="7a24b7ea-17f5-401e-b15c-b7e52b2d2347"/>
+  </slsa.mm.param.rtp.Parameter>
+  <slsa.mm.param.rtp.Parameter type="slsa.mm.param.rtp.Parameter" uuid="3008a521-545a-4441-b50f-7384ec32ccdd">
+    <id type="slsa.mm.param.rtp.VariableId" uuid="fc2396e6-3164-4784-931f-da7c8ddb7dad"/>
+    <rtpLocation type="slsa.mm.param.rtp.RtpLocation" uuid="3315cff8-9654-4cc7-9ccf-625e81d622ef"/>
+  </slsa.mm.param.rtp.Parameter>
+  <slsa.mm.param.rtp.VariableId type="slsa.mm.param.rtp.VariableId" uuid="fc2396e6-3164-4784-931f-da7c8ddb7dad">
+    <workspaceName>global-workspace</workspaceName>
+    <name>Q_opt_scaled</name>
+    <parameter type="slsa.mm.param.rtp.Parameter" uuid="3008a521-545a-4441-b50f-7384ec32ccdd"/>
+  </slsa.mm.param.rtp.VariableId>
+  <slsa.mm.param.rtp.RtpLocation type="slsa.mm.param.rtp.RtpLocation" uuid="3315cff8-9654-4cc7-9ccf-625e81d622ef">
+    <parameter type="slsa.mm.param.rtp.Parameter" uuid="3008a521-545a-4441-b50f-7384ec32ccdd"/>
+    <valueIndices>0</valueIndices>
+    <valueIndices>15</valueIndices>
+  </slsa.mm.param.rtp.RtpLocation>
+  <slsa.mm.param.rtp.VariableId type="slsa.mm.param.rtp.VariableId" uuid="a5341a04-9b3f-4f85-a783-deada99d0798">
+    <workspaceName>global-workspace</workspaceName>
+    <name>T_S</name>
+    <parameter type="slsa.mm.param.rtp.Parameter" uuid="a0e2ca16-89f6-4a24-89d6-7df898115467"/>
+  </slsa.mm.param.rtp.VariableId>
+  <slsa.mm.param.rtp.RtpLocation type="slsa.mm.param.rtp.RtpLocation" uuid="7a24b7ea-17f5-401e-b15c-b7e52b2d2347">
+    <parameter type="slsa.mm.param.rtp.Parameter" uuid="a0e2ca16-89f6-4a24-89d6-7df898115467"/>
+    <valueIndices>16</valueIndices>
+    <valueIndices>16</valueIndices>
+  </slsa.mm.param.rtp.RtpLocation>
+  <slsa.mm.param.rtp.BlockParameterId type="slsa.mm.param.rtp.BlockParameterId" uuid="c6760b3d-aa52-4743-87a0-18281b8ce478">
+    <blockPath>MIL_Testing/EKF_gate/Subsystem/Constant</blockPath>
+    <name>Value</name>
+    <parameter type="slsa.mm.param.rtp.Parameter" uuid="4644ce1b-a6f5-4392-871f-709c3acddfa1"/>
+  </slsa.mm.param.rtp.BlockParameterId>
+  <slsa.mm.param.rtp.Parameter type="slsa.mm.param.rtp.Parameter" uuid="4644ce1b-a6f5-4392-871f-709c3acddfa1">
+    <id type="slsa.mm.param.rtp.BlockParameterId" uuid="c6760b3d-aa52-4743-87a0-18281b8ce478"/>
+    <rtpLocation type="slsa.mm.param.rtp.RtpLocation" uuid="62c494c7-a1ce-41d0-9fc8-c2d7deeb10d6"/>
+  </slsa.mm.param.rtp.Parameter>
+  <slsa.mm.param.rtp.RtpLocation type="slsa.mm.param.rtp.RtpLocation" uuid="62c494c7-a1ce-41d0-9fc8-c2d7deeb10d6">
+    <parameter type="slsa.mm.param.rtp.Parameter" uuid="4644ce1b-a6f5-4392-871f-709c3acddfa1"/>
+    <segmentIndex>2</segmentIndex>
+    <valueIndices>10</valueIndices>
+    <valueIndices>25</valueIndices>
+  </slsa.mm.param.rtp.RtpLocation>
+</MF0>

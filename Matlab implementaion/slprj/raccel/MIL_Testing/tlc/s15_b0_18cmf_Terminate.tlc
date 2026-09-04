@@ -1,0 +1,48 @@
+%implements s15_b0_18cmf_Terminate "C"
+
+%function Terminate(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%openfile localVarDecl
+
+real_T Pa[81];
+real_T Pg[36];
+real_T aggS[9];
+real_T gateS[6];
+int32_T i;
+%closefile localVarDecl
+if (!rtDW.iaddyvzw5e.matlabCodegenIsDeleted) {
+    rtDW.iaddyvzw5e.matlabCodegenIsDeleted = true;
+}
+for (i = 0; i < 6; i++) {
+    gateS[i] = rtB.pf1bcrl5dc[i];
+}
+memcpy(&aggS[0], &rtB.b3yhnwjth4[0], 9U * sizeof(real_T));
+memcpy(&Pg[0], &rtB.a4mpu0tcou[0], 36U * sizeof(real_T));
+memcpy(&Pa[0], &rtB.beqtta0fdy[0], 81U * sizeof(real_T));
+/*  Pass arrays by reference */
+log_full_row(&gateS[0], &aggS[0], &Pg[0], &Pa[0]);
+/*   coder.ceval('exit', int32(0)); */
+if (!rtDW.mhyvkdo2ux.matlabCodegenIsDeleted) {
+    rtDW.mhyvkdo2ux.matlabCodegenIsDeleted = true;
+    if ((rtDW.mhyvkdo2ux.isInitialized == 1) && rtDW.mhyvkdo2ux.isSetupComplete) {
+        close_serial();
+    }
+}
+%closefile cfgTxt
+%<cfgTxt>
+%<LibSetSystemField(system, "CachedTerminateLocalVars", localVarDecl)>
+%endfunction
+%function TerminateFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Terminate(\
+%assign comma = ""
+%if SLibCG_ArgAccessed(0, 17, 0)
+%<comma>int32_T tid\
+%assign comma = ", "
+%endif
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 17, fcnProtoType)>
+%endfunction

@@ -1,0 +1,82 @@
+%implements s15_b0_18cmf_TLCInterface "C"
+
+%function getInputAddr_10_4_0_12_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&rtB.efbbsnpjmh"
+%endfunction
+
+%function getInput_10_4_0_12_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "rtB.efbbsnpjmh"
+%endfunction
+
+%function getDWorkAddr_10_4_0_12_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&rtDW.lpcu2qem5y"
+%endfunction
+
+%function getDWork_10_4_0_12_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "rtDW.lpcu2qem5y"
+%endfunction
+
+%function getInputAddr_10_5_0_12_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&rtB.eub55bvmvf"
+%endfunction
+
+%function getInput_10_5_0_12_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "rtB.eub55bvmvf"
+%endfunction
+
+%function getDWorkAddr_10_5_0_12_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&rtDW.ao4eofohr2"
+%endfunction
+
+%function getDWork_10_5_0_12_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "rtDW.ao4eofohr2"
+%endfunction
+
+%function getInputAddr_10_4_0_14_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&rtB.efbbsnpjmh"
+%endfunction
+
+%function getInput_10_4_0_14_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "rtB.efbbsnpjmh"
+%endfunction
+
+%function getDWorkAddr_10_4_0_14_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&rtDW.lpcu2qem5y"
+%endfunction
+
+%function getDWork_10_4_0_14_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "rtDW.lpcu2qem5y"
+%endfunction
+
+%function getInputAddr_10_5_0_14_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&rtB.eub55bvmvf"
+%endfunction
+
+%function getInput_10_5_0_14_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "rtB.eub55bvmvf"
+%endfunction
+
+%function getDWorkAddr_10_5_0_14_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&rtDW.ao4eofohr2"
+%endfunction
+
+%function getDWork_10_5_0_14_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "rtDW.ao4eofohr2"
+%endfunction
+

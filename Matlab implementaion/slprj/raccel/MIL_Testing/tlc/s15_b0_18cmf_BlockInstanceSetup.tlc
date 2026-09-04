@@ -1,0 +1,11 @@
+%implements s15_b0_18cmf_BlockInstanceSetup "C"
+
+%function BlockInstanceSetup(block, system) Output
+%% Subsystems with iterators in IR:
+%% TLC Block Registration buffer:
+%<LibAddToCommonIncludes("gate.hpp")>
+%<LibAddToCommonIncludes("serial_reader.hpp")>
+%<LibAddToCommonIncludes("<stdio.h>")>
+%<LibAddToCommonIncludes("csv_logger.hpp")>
+%% END  Block Registration buffer
+%endfunction

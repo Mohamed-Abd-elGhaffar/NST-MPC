@@ -1,0 +1,25 @@
+%implements s15_b0_18cmf_ModelPrevZCStateInit "C"
+
+%function ModelPrevZCStateInit(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+rtPrevZCX.mcel2q5oxa = UNINITIALIZED_ZCSIG;
+rtPrevZCX.dxnz1qecxv = UNINITIALIZED_ZCSIG;
+rtPrevZCX.lbklrmk5g2 = UNINITIALIZED_ZCSIG;
+rtPrevZCX.et435gabll = UNINITIALIZED_ZCSIG;
+%closefile cfgTxt
+%<cfgTxt>
+%endfunction
+%function ModelPrevZCStateInitFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void ModelPrevZCStateInit(\
+%assign comma = ""
+%if SLibCG_ArgAccessed(0, 18, 0)
+%<comma>int32_T tid\
+%assign comma = ", "
+%endif
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 18, fcnProtoType)>
+%endfunction
